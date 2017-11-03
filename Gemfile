@@ -51,4 +51,8 @@ group :development do
 
 end
 
+group :production do
+  gem 'pg'         #gem to use in production environment
+end
+
 
