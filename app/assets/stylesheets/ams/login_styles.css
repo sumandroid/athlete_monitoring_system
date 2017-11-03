@@ -14,6 +14,7 @@ header div{
   background-color: #364150 !important;
   padding-top: 30px;
   padding-bottom: 40px;
+  height: calc(100vh - 70px);
 }
 
 .login .content{
@@ -23,7 +24,7 @@ header div{
   -ms-border-radius: 7px;
   -o-border-radius: 7px;
   border-radius: 7px;
-  width: 400px;
+  width: 470px;
   margin: 00px auto 10px auto;
   padding: 30px;
   padding-top: 10px;
@@ -93,10 +94,10 @@ label {
 
 @media screen and (max-width: 480px){
   .login{
-    height: 100vh;
+    height: calc(100vh - 70px);
   }
   .login .content {
-    width: 280px;
+    width: 300px;
     margin-top: 10px;
   }
   .login .content h3 {
