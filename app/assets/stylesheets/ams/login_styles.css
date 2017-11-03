@@ -92,6 +92,7 @@ label {
   color: #8290a3;
 }
 
+
 @media screen and (max-width: 480px){
   .login{
     height: calc(100vh - 70px);
