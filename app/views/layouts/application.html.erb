@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <%= render(:partial => 'layouts/head') %>
-  </head>
+<head>
+  <%= render(:partial => 'layouts/head') %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+
+<%= render(:partial => 'layouts/header') %>
+<%= yield %>
+<%= render(:partial => 'layouts/footer') %>
+</body>
 </html>
