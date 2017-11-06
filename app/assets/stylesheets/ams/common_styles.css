@@ -1,0 +1,206 @@
+/*.color-white{*/
+  /*color: white;*/
+/*}*/
+
+/*.weekly-tabs{*/
+  /*position: relative;*/
+/*}*/
+
+/*.weekly-tabs{*/
+  /*height: 600px;*/
+  /*width: 550px;*/
+/*}*/
+
+/*.weekly-tabs .day{*/
+  /*height: 365px;*/
+  /*width: 520px;*/
+  /*position: absolute;*/
+/*}*/
+
+/*.weekly-tabs .day.monday{*/
+  /*z-index: 6;*/
+  /*background-color: red;*/
+  /*bottom: 0px;*/
+  /*left: 20px;*/
+/*}*/
+/*.weekly-tabs .day.tuesday{*/
+  /*z-index: 5;*/
+  /*background-color: green;*/
+  /*bottom: 40px;*/
+  /*left: 40px;*/
+/*}*/
+
+/*.weekly-tabs .day.wednesday{*/
+  /*z-index: 4;*/
+  /*background-color: blue;*/
+  /*bottom: 80px;*/
+  /*left: 60px;*/
+/*}*/
+
+/*.weekly-tabs .day.thursday{*/
+  /*z-index: 3;*/
+  /*background-color: yellow;*/
+  /*bottom: 120px;*/
+  /*left: 80px;*/
+/*}*/
+
+/*.weekly-tabs .day.friday{*/
+  /*z-index: 2;*/
+  /*background-color: purple;*/
+  /*bottom: 160px;*/
+  /*left: 100px;*/
+/*}*/
+
+/*.weekly-tabs .day.saturday{*/
+  /*z-index: 1;*/
+  /*background-color: orange;*/
+  /*bottom: 200px;*/
+  /*left: 120px;*/
+/*}*/
+
+/*.day-name{*/
+  /*height: 38px;*/
+  /*border-bottom: 1px solid black;*/
+/*}*/
+
+a{
+  text-decoration: none;
+  color: #797979;
+}
+
+a:hover{
+  text-decoration: none;
+  color: #797979;
+}
+
+.make-flex{
+  display: flex;
+}
+
+.position-relative{
+  position: relative;
+}
+
+.position-absolute{
+  position: absolute;
+}
+
+.p-tb-20{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+header .row{
+  padding-top: 10px;
+}
+
+header .athlete-img img{
+  border-radius: 50%;
+}
+
+.tab-heading-text{
+  font-size: 20px;
+  font-weight: bold;
+  color: #797979;
+}
+
+.clr{
+  clear: both;
+}
+
+.graph-container{
+  height: 686px;
+  margin-top: 40px;
+  border: 1px solid grey;
+}
+
+.tabs-container{
+  margin-top: 40px;
+  border: 1px solid grey;
+}
+
+.week-assessment{
+  width: 100%;
+  border-bottom: 1px solid grey;
+  justify-content: space-around;
+}
+
+.week-assessment .week{
+  font-size: 18px;
+  color: #797979;
+}
+
+.week-assessment .week.week-active{
+  color: #2ec036;
+}
+
+.week-assessment .lr-angle{
+  right: 20px;
+  color: #797979;
+  top: 17px;
+}
+
+.week-assessment .lr-angle i:hover{
+  cursor: pointer;
+  color: #222;
+}
+
+.tabs-container ul.nav-tabs li{
+  padding: 0 15px;
+}
+
+.table-title{
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.tab-content{
+  margin: 0 auto;
+}
+
+.athlete-drills{
+  background-color: #F8F8F8;
+  padding: 30px 20px 30px 20px;
+}
+
+.drills{
+  height: 200px;
+  width: 200px;
+}
+
+.drills > div{
+  height: 180px;
+  width: 180px;
+  margin: 0 auto;
+  box-shadow: 0 12px 15px 0 rgba(0,0,0,0.24);
+}
+
+.drill-title{
+  border-bottom: 1px solid #ddd;
+}
+
+.drill-title .drill-name{
+  margin-left: 14px;
+  padding-top: 14px;
+  font-weight: 600;
+  color: #797979;
+}
+
+.drill-routine{
+  color: #797979;
+  -webkit-padding-start: 25px;
+  margin-top: 10px;
+}
+
+.drill-routine li{
+  padding: 0 5px;
+  text-align: left;
+  margin-top: 5px;
+}
+
+.nav-tabs.nav-justified>li>a.active,
+.nav-tabs.nav-justified>li>a.active:focus,
+.nav-tabs.nav-justified>li>a.active:hover {
+  font-size: 19px;
+  color: #2ec036;
+}

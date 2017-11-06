@@ -1,0 +1,5 @@
+.graph-container .physical-graph, .graph-container .mental-graph,
+.graph-container .nutrition-graph{
+  height:300px;
+  width:400px;
+}

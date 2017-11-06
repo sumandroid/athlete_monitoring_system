@@ -1,11 +1,10 @@
 header{
   background-color: #222;
   height:70px;
-  text-align: center;
 }
 
-header div{
-  padding-top: 20px;
+header .app-name{
+  padding-top: 10px;
   color: white;
   font-size: 22px;
   letter-spacing: 1.3px;
