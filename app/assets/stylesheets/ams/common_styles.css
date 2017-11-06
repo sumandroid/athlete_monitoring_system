@@ -163,13 +163,13 @@ header .athlete-img img{
 
 
 .trend-analysis{
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .analysis-dropdown{
   -webkit-appearance: none;
   width: 113px;
-  background-color: #323232;
+  background-color: transparent;
   color: #95989A;
   padding-left: 8px;
   font-weight: 600;
@@ -177,20 +177,25 @@ header .athlete-img img{
   padding-bottom: 3px;
 }
 
+.analysis-dropdown:focus{
+  outline: 1px solid #222;
+}
+
 .analysis-dropdown ~ i{
   color: #95989A;
   position: absolute;
   right: 12px;
   top: 7px;
+  z-index: -1;
 }
 
 .week-container{
-  justify-content: space-between;
+  justify-content: space-around;
   color: #797979;
 }
 
 .trend-analysis .schedule , .week-container .schedule{
-  font-size: 20px;
+  font-size: 24px;
   color: #797979;
   font-weight: 700;
 }
