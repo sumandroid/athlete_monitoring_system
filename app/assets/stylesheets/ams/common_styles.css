@@ -112,6 +112,7 @@ header .athlete-img img{
   font-size: 26px;
   color: #797979;
   margin-top: 40px;
+  margin-bottom: 30px;
 }
 
 .assessment-heading::after{
@@ -125,12 +126,12 @@ header .athlete-img img{
 
 .graph-container{
   height: 569px;
-  margin-top: 40px;
+  margin-top: 10px;
   border: 1px solid grey;
 }
 
 .tabs-container{
-  margin-top: 40px;
+  margin-top: 10px;
   border: 1px solid grey;
 }
 
@@ -161,10 +162,37 @@ header .athlete-img img{
 /*}*/
 
 
+.trend-analysis{
+  justify-content: space-between;
+}
+
+.analysis-dropdown{
+  -webkit-appearance: none;
+  width: 113px;
+  background-color: #323232;
+  color: #95989A;
+  padding-left: 8px;
+  font-weight: 600;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.analysis-dropdown ~ i{
+  color: #95989A;
+  position: absolute;
+  right: 12px;
+  top: 7px;
+}
+
 .week-container{
-  right: 20px;
+  justify-content: space-between;
   color: #797979;
-  top: -33px;
+}
+
+.trend-analysis .schedule , .week-container .schedule{
+  font-size: 20px;
+  color: #797979;
+  font-weight: 700;
 }
 
 .week-container .week{
@@ -174,7 +202,7 @@ header .athlete-img img{
 }
 
 .week-container .week.week-active{
-  color: #2ec036;
+  color: #797979;
 }
 
 .week-container .lr-angle i{
@@ -240,11 +268,25 @@ header .athlete-img img{
   margin-top: 5px;
 }
 
+ul.nav.nav-justified{
+  background-color: #323232;
+}
+
+.nav-tabs.nav-justified>li>a{
+  font-weight: 600;
+  color: #95989A;
+}
+
+.nav-tabs.nav-justified>li>a:hover{
+  color: #F5F5F3;
+}
+
 .nav-tabs.nav-justified>li>a.active,
 .nav-tabs.nav-justified>li>a.active:focus,
 .nav-tabs.nav-justified>li>a.active:hover {
   font-size: 19px;
-  color: #2ec036;
+  color: white;
+  font-weight: 700;
 }
 
 

@@ -4,6 +4,17 @@
     <div class="assessment-heading text-center font-weight-bold">Physical Fitness</div>
     <div class="row">
       <div class="col-sm-6">
+        <div class="trend-analysis make-flex">
+          <div class="schedule">Trend Analysis</div>
+          <div class="trend-select position-relative">
+            <select class="analysis-dropdown">
+              <option value="">Physical</option>
+              <option value="">Mental</option>
+              <option value="">Nutrition</option>
+            </select>
+            <i class="fa fa-caret-down position-absolute"></i>
+          </div>
+        </div>
         <div class="graph-container">
           <div id="fitness_graph">
 
@@ -11,14 +22,17 @@
         </div>
       </div>
       <div class="col-sm-6">
-        <div class="tabs-container position-relative">
-          <div class="week-container position-absolute make-flex">
+        <div class="week-container make-flex">
+          <div class="schedule">Fitness Schedule</div>
+          <div class="make-flex">
             <div class="week week-active">Week 1</div>
             <div class="lr-angle">
               <i class="fa fa-angle-left fa-2x mr-2" aria-hidden="true"></i>
               <i class="fa fa-angle-right fa-2x" aria-hidden="true"></i>
             </div>
           </div>
+        </div>
+        <div class="tabs-container">
           <!--<div class="week-assessment make-flex p-tb-20 position-relative">-->
             <!--<div class="assessment tab-heading-text">Physical Fitness</div>-->
             <!--<div class="week week-active">Week 1</div>-->
