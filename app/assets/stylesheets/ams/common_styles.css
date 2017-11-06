@@ -150,8 +150,9 @@ header .athlete-img img{
 }
 
 .table-title{
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 7px;
+  /*padding-bottom: 15px;*/
+  padding-bottom: 7px;
 }
 
 .tab-content{
@@ -160,7 +161,7 @@ header .athlete-img img{
 
 .athlete-drills{
   background-color: #F8F8F8;
-  padding: 30px 20px 30px 20px;
+  padding: 18px 12px 18px 12px;
 }
 
 .drills{
@@ -176,7 +177,7 @@ header .athlete-img img{
 }
 
 .drill-title{
-  border-bottom: 1px solid #ddd;
+  /*border-bottom: 1px solid #ddd;*/
 }
 
 .drill-title .drill-name{
@@ -203,4 +204,30 @@ header .athlete-img img{
 .nav-tabs.nav-justified>li>a.active:hover {
   font-size: 19px;
   color: #2ec036;
+}
+
+
+
+
+th{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  font-size: 18px;
+  color: #797979;
+}
+
+td{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+td.drill-td{
+  width: 60%;
+}
+
+td.drill-stat{
+  text-align: left;
+  padding-left: 10px;
+  color: #797979;;
 }
