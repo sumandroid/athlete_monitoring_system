@@ -5,9 +5,9 @@
     <div class="row">
       <div class="col-sm-6">
         <div class="graph-container">
-          <!--<div class="week-assessment make-flex p-tb-20 position-relative">-->
-            <!--<div class="assessment tab-heading-text">Physical Fitness</div>-->
-          <!--</div>-->
+          <div id="fitness_graph">
+
+          </div>
         </div>
       </div>
       <div class="col-sm-6">
@@ -659,3 +659,41 @@
 <!--</div>-->
 <!--</div>-->
 <!--</body>-->
+<script>
+  Highcharts.chart('fitness_graph', {
+
+    title: {
+      text: ''
+    },
+
+    yAxis: {
+      title: {
+        text: 'Score'
+      }
+    },
+    xAxis: {
+      categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6']
+    },
+    legend: {
+      layout: 'horizontal'
+    },
+
+    series: [{
+      name: 'Agility',
+      data: [10, 15, 14, 18, 19, 17]
+    }, {
+      name: 'Balance',
+      data: [11, 16, 17, 17, 18, 10]
+    }, {
+      name: 'Endurance',
+      data: [9, 8, 14, 11, 15, 16]
+    }, {
+      name: 'Flexibility',
+      data: [8, 9, 10, 10, 12, 15]
+    }, {
+      name: 'Speed',
+      data: [8, 10, 11, 11, 14, 13]
+    }],
+
+  });
+</script>
