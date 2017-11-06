@@ -86,8 +86,8 @@ a:hover{
 }
 
 .p-tb-20{
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 header .row{
@@ -108,8 +108,23 @@ header .athlete-img img{
   clear: both;
 }
 
+.assessment-heading{
+  font-size: 26px;
+  color: #797979;
+  margin-top: 40px;
+}
+
+.assessment-heading::after{
+  content: '';
+  display: block;
+  width: 120px;
+  margin: 0 auto;
+  height: 2px;
+  background-color: #797979;
+}
+
 .graph-container{
-  height: 686px;
+  height: 569px;
   margin-top: 40px;
   border: 1px solid grey;
 }
@@ -119,28 +134,54 @@ header .athlete-img img{
   border: 1px solid grey;
 }
 
-.week-assessment{
-  width: 100%;
-  border-bottom: 1px solid grey;
-  justify-content: space-around;
-}
+/*.week-assessment{*/
+  /*width: 100%;*/
+  /*border-bottom: 1px solid grey;*/
+  /*justify-content: space-around;*/
+/*}*/
 
-.week-assessment .week{
-  font-size: 18px;
+/*.week-assessment .week{*/
+  /*font-size: 18px;*/
+  /*color: #797979;*/
+/*}*/
+
+/*.week-assessment .week.week-active{*/
+  /*color: #2ec036;*/
+/*}*/
+
+/*.week-assessment .lr-angle{*/
+  /*right: 20px;*/
+  /*color: #797979;*/
+  /*top: 17px;*/
+/*}*/
+
+/*.week-assessment .lr-angle i:hover{*/
+  /*cursor: pointer;*/
+  /*color: #222;*/
+/*}*/
+
+
+.week-container{
+  right: 20px;
   color: #797979;
+  top: -33px;
 }
 
-.week-assessment .week.week-active{
+.week-container .week{
+  font-size: 20px;
+  color: #797979;
+  margin-right: 15px;
+}
+
+.week-container .week.week-active{
   color: #2ec036;
 }
 
-.week-assessment .lr-angle{
-  right: 20px;
-  color: #797979;
-  top: 17px;
+.week-container .lr-angle i{
+  font-size: 27px;
 }
 
-.week-assessment .lr-angle i:hover{
+.week-container .lr-angle i:hover{
   cursor: pointer;
   color: #222;
 }
@@ -220,8 +261,8 @@ th{
 }
 
 td{
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 7px;
+  padding-bottom: 7px;
 }
 
 td.drill-td{
