@@ -16,7 +16,7 @@
           </div>
         </div>
         <div class="graph-container">
-          <div id="fitness_graph">
+          <div id="fitness_graph" style="width:100%;">
 
           </div>
           <div id="nutrition_graph" class="d-none">
@@ -333,9 +333,6 @@
   Highcharts.chart('fitness_graph', {
 
     chart: {
-      margin: 0,
-      width: width,
-      height: height,
       type: 'column'
     },
 
@@ -379,9 +376,6 @@
   Highcharts.chart('nutrition_graph', {
 
     chart: {
-      margin: 0,
-      width: width,
-      height: height,
       type: 'column'
     },
     title: {
@@ -423,9 +417,6 @@
   Highcharts.chart('mental_graph', {
 
     chart: {
-      margin: 0,
-      width: width,
-      height: height,
       type: 'column'
     },
     title: {
