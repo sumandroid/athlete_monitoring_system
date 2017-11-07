@@ -231,3 +231,21 @@
 //
 //    })
 // })
+
+$(function () {
+  $('.trend-analysis-select').on('click', function () {
+    if($('.trend-analysis-container').hasClass('d-none')){
+      $('.schedule-container').addClass('d-none');
+      $('.trend-analysis-container').removeClass('d-none');
+    }
+    else{
+    }
+  });
+
+  $('.schedule-select').on('click', function () {
+    if($('.schedule-container').hasClass('d-none')){
+      $('.schedule-container').removeClass('d-none');
+      $('.trend-analysis-container').addClass('d-none');
+    }
+  })
+})

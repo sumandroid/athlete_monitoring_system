@@ -1,0 +1,362 @@
+<body>
+<div class="main-container">
+  <div class="container-fluid text-center">
+    <!--<div class="assessment-heading text-center font-weight-bold">Physical Fitness</div>-->
+    <div class="row mt-5">
+      <div class="trend-analysis-container mx-auto" style="width: 95%;">
+        <div class="trend-analysis make-flex">
+          <div class="schedule">Trend Analysis</div>
+          <div class="trend-select position-relative">
+            <select class="analysis-dropdown">
+              <option value="">Physical</option>
+              <option value="">Mental</option>
+              <option value="">Nutrition</option>
+            </select>
+            <i class="fa fa-caret-down position-absolute"></i>
+          </div>
+        </div>
+        <div class="graph-container">
+          <div id="fitness_graph">
+
+          </div>
+        </div>
+      </div>
+      <div class="schedule-container d-none mx-auto" style="width: 95%;">
+        <div class="week-container make-flex">
+          <div class="schedule">Fitness Schedule</div>
+          <div class="make-flex">
+            <div class="week week-active">Week 1</div>
+            <div class="lr-angle">
+              <i class="fa fa-angle-left fa-2x mr-2" aria-hidden="true"></i>
+              <i class="fa fa-angle-right fa-2x" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+        <div class="tabs-container">
+          <div class="clr"></div>
+          <ul class="nav nav-tabs nav-justified p-tb-20 week-days">
+            <li class=""><a class="active" data-toggle="tab" href="#tab-1" aria-expanded="true">Mon</a></li>
+            <li class=""><a data-toggle="tab" href="#tab-2" aria-expanded="false">Tue</a></li>
+            <li class=""><a data-toggle="tab" href="#tab-3" aria-expanded="false">Wed</a></li>
+            <li class=""><a data-toggle="tab" href="#tab-4" aria-expanded="false">Thu</a></li>
+            <li class=""><a data-toggle="tab" href="#tab-5" aria-expanded="false">Fri</a></li>
+            <li class=""><a data-toggle="tab" href="#tab-6" aria-expanded="false">Sat</a></li>
+          </ul>
+          <div class="tab-content">
+            <div id="tab-1" class="tab-pane active">
+              <div class="panel-body">
+                <div class="table-title tab-heading-text">Monday</div>
+                <div class="athlete-drills">
+                  <table class="table-striped table-responsive" width="90%" align="center">
+                    <thead>
+                    <tr>
+                      <th>Drill</th>
+                      <th>Sets</th>
+                      <th>Reps</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td class="drill-td">
+                        <div class="drill-title make-flex">
+                          <img src="icons8-pushups.png">
+                          <div class="drill-name">Push Ups</div>
+                        </div>
+                      </td>
+                      <td class="drill-stat">3</td>
+                      <td class="drill-stat">max</td>
+                    </tr>
+                    <tr>
+                      <td class="drill-td">
+                        <div class="drill-title make-flex">
+                          <img src="icons8-pullups.png">
+                          <div class="drill-name">Pull Ups</div>
+                        </div>
+                      </td>
+                      <td class="drill-stat">3</td>
+                      <td class="drill-stat">max</td>
+                    </tr>
+                    <tr>
+                      <td class="drill-td">
+                        <div class="drill-title make-flex">
+                          <img src="icons8-pushups.png">
+                          <div class="drill-name">Incline Pushups</div>
+                        </div>
+                      </td>
+                      <td class="drill-stat">3</td>
+                      <td class="drill-stat">max</td>
+                    </tr>
+                    <tr>
+                      <td class="drill-td">
+                        <div class="drill-title make-flex">
+                          <img src="icons8-squats.png">
+                          <div class="drill-name">Squats</div>
+                        </div>
+                      </td>
+                      <td class="drill-stat">3</td>
+                      <td class="drill-stat">max</td>
+                    </tr>
+                    <tr>
+                      <td class="drill-td">
+                        <div class="drill-title make-flex">
+                          <img src="icons8-running.png">
+                          <div class="drill-name">Running</div>
+                        </div>
+                      </td>
+                      <td class="drill-stat">3</td>
+                      <td class="drill-stat">max</td>
+                    </tr>
+                    <tr>
+                      <td class="drill-td">
+                        <div class="drill-title make-flex">
+                          <img src="icons8-sit-ups.png">
+                          <div class="drill-name">Crunches</div>
+                        </div>
+                      </td>
+                      <td class="drill-stat">3</td>
+                      <td class="drill-stat">max</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
+            </div>
+            <div id="tab-2" class="tab-pane">
+              <div class="panel-body">
+                <div class="table-title tab-heading-text">Tuesday</div>
+                <div class="athlete-drills">
+                  <div class="drills-container tuesday">
+                    <div class="row">
+                      <div class="col-sm-4 drills"></div>
+                      <div class="col-sm-4 drills"></div>
+                      <div class="col-sm-4 drills"></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-4 drills"></div>
+                      <div class="col-sm-4 drills"></div>
+                      <div class="col-sm-4 drills"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="tab-3" class="tab-pane">
+              <div class="panel-body">
+                <div class="table-title tab-heading-text">Wednesday</div>
+                <div class="athlete-drills">
+                  <div class="drills-container wednesday">
+                    <div class="row">
+                      <div class="col-sm-4 drills">
+                        <div class="push-ups"></div>
+                      </div>
+                      <div class="col-sm-4 drills">
+                        <div class="chest-dip"></div>
+                      </div>
+                      <div class="col-sm-4 drills">
+                        <div class="incline-push-ups"></div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-4 drills">
+                        <div class="single-leg-squats"></div>
+                      </div>
+                      <div class="col-sm-4 drills">
+                        <div class="calf-raises"></div>
+                      </div>
+                      <div class="col-sm-4 drills">
+                        <div class="crunches"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="tab-4" class="tab-pane">
+              <div class="panel-body">
+                <div class="table-title tab-heading-text">Thursday</div>
+                <div class="athlete-drills">
+                  <div class="drills-container thursday">
+                    <div class="row">
+                      <div class="col-sm-4 drills"></div>
+                      <div class="col-sm-4 drills"></div>
+                      <div class="col-sm-4 drills"></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-4 drills"></div>
+                      <div class="col-sm-4 drills"></div>
+                      <div class="col-sm-4 drills"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="tab-5" class="tab-pane">
+              <div class="panel-body">
+                <div class="table-title tab-heading-text">Friday</div>
+                <div class="athlete-drills">
+                  <div class="drills-container wednesday">
+                    <div class="row mb-4">
+                      <div class="col-sm-4 drills">
+                        <div class="push-ups">
+                          <div class="drill-title make-flex">
+                            <img src="icons8-pushups.png">
+                            <div class="drill-name">Push Ups</div>
+                          </div>
+                          <ul class="drill-routine">
+                            <li>3 Sets, max reps</li>
+                            <li>3 Sets, max reps</li>
+                            <li>3 Sets, max reps</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-sm-4 drills">
+                        <div class="chest-dip">
+                          <div class="drill-title make-flex">
+                            <img src="icons8-pullups.png">
+                            <div class="drill-name">Pull Ups</div>
+                          </div>
+                          <ul class="drill-routine">
+                            <li>3 Sets, max reps</li>
+                            <li>3 Sets, max reps</li>
+                            <li>3 Sets, max reps</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-sm-4 drills">
+                        <div class="incline-push-ups">
+                          <div class="drill-title make-flex">
+                            <img src="icons8-pushups.png">
+                            <div class="drill-name">Incline Pushups</div>
+                          </div>
+                          <ul class="drill-routine">
+                            <li>3 Sets, max reps</li>
+                            <li>3 Sets, max reps</li>
+                            <li>3 Sets, max reps</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-4 drills">
+                        <div class="single-leg-squats">
+                          <div class="drill-title make-flex">
+                            <img src="icons8-squats.png">
+                            <div class="drill-name">Squats</div>
+                          </div>
+                          <ul class="drill-routine">
+                            <li>3 Sets, max reps</li>
+                            <li>3 Sets, max reps</li>
+                            <li>3 Sets, max reps</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-sm-4 drills">
+                        <div class="running">
+                          <div class="drill-title make-flex">
+                            <img src="icons8-running.png">
+                            <div class="drill-name">Running</div>
+                          </div>
+                          <ul class="drill-routine">
+                            <li>3 Sets, max reps</li>
+                            <li>3 Sets, max reps</li>
+                            <li>3 Sets, max reps</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-sm-4 drills">
+                        <div class="crunches">
+                          <div class="drill-title make-flex">
+                            <img src="icons8-sit-ups.png">
+                            <div class="drill-name">Crunches</div>
+                          </div>
+                          <ul class="drill-routine">
+                            <li>3 Sets, max reps</li>
+                            <li>3 Sets, max reps</li>
+                            <li>3 Sets, max reps</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="tab-6" class="tab-pane">
+              <div class="panel-body">
+                <div class="table-title tab-heading-text">Saturday</div>
+                <div class="athlete-drills">
+                  <div class="drills-container saturday">
+                    <div class="row">
+                      <div class="col-sm-4 drills"></div>
+                      <div class="col-sm-4 drills"></div>
+                      <div class="col-sm-4 drills"></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-4 drills"></div>
+                      <div class="col-sm-4 drills"></div>
+                      <div class="col-sm-4 drills"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="select-footer make-flex">
+  <div class="col-6">
+    <div class="trend-analysis-select make-flex">
+      <img src="bar-chart.png">
+      <div><span>Trend<br>Analysis</span></div>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="schedule-select make-flex">
+      <img src="calendar.png">
+      <div><span class="helper"></span><span>Schedule</span></div>
+    </div>
+  </div>
+</div>
+</body>
+<script>
+  Highcharts.chart('fitness_graph', {
+
+    title: {
+      text: ''
+    },
+
+    yAxis: {
+      title: {
+        text: 'Score'
+      }
+    },
+    xAxis: {
+      categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6']
+    },
+    legend: {
+      layout: 'horizontal'
+    },
+
+    series: [{
+      name: 'Agility',
+      data: [10, 15, 14, 18, 19, 17]
+    }, {
+      name: 'Balance',
+      data: [11, 16, 17, 17, 18, 10]
+    }, {
+      name: 'Endurance',
+      data: [9, 8, 14, 11, 15, 16]
+    }, {
+      name: 'Flexibility',
+      data: [8, 9, 10, 10, 12, 15]
+    }, {
+      name: 'Speed',
+      data: [8, 10, 11, 11, 14, 13]
+    }],
+
+  });
+</script>

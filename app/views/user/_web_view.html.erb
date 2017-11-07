@@ -676,6 +676,13 @@
 <script>
   Highcharts.chart('fitness_graph', {
 
+    chart: {
+      margin: 0,
+      width: width,
+      height: height,
+      defaultSeriesType: 'areaspline'
+    },
+
     title: {
       text: ''
     },
@@ -686,6 +693,8 @@
       }
     },
     xAxis: {
+      minPadding: 0,
+      maxPadding: 0,
       categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6']
     },
     legend: {
