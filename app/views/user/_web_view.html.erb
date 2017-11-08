@@ -329,9 +329,9 @@
     <div class="row my-5">
       <div class="comparision">
         <div class="comparision-analysis make-flex">
-          <div class="schedule">Comparision Analysis</div>
+          <div class="schedule">Comparision</div>
           <div class="trend-select position-relative">
-            <select class="analysis-dropdown">
+            <select class="analysis-dropdown comparison_analysis">
               <option value="physical">Physical</option>
               <option value="mental">Mental</option>
               <option value="nutrition">Nutrition</option>
@@ -340,16 +340,47 @@
           </div>
 
           <div class="trend-select position-relative">
-            <select class="analysis-dropdown">
-              <option value="physical">Physical</option>
-              <option value="mental">Mental</option>
-              <option value="nutrition">Nutrition</option>
+            <select class="analysis-dropdown attribute_select" style="width:250px;">
+              <option value="agility" selected>Agility</option>
+              <option value="balance">Balance</option>
+              <option value="endurance">Endurance</option>
+              <option value="flexibility">Flexibility</option>
+              <option value="speed">Speed</option>
             </select>
             <i class="fa fa-caret-down position-absolute"></i>
           </div>
         </div>
         <div class="comparision-graph-container">
-
+            <div id="agility_comparison_graph" style="width:50%;">
+            </div>
+          <div id="balance_comparison_graph" style="width:50%;" class="d-none">
+          </div>
+          <div id="endurance_comparison_graph" style="width:50%;" class="d-none">
+          </div>
+          <div id="flexibility_comparison_graph" style="width:50%;" class="d-none">
+          </div>
+          <div id="speed_comparison_graph" style="width:50%;" class="d-none">
+          </div>
+          <div id="attention_control_graph" style="width:50%;" class="d-none">
+          </div>
+          <div id="negative_energy_graph" style="width:50%;" class="d-none">
+          </div>
+          <div id="positive_energy_graph" style="width:50%;" class="d-none">
+          </div>
+          <div id="motivation_level_graph" style="width:50%;" class="d-none">
+          </div>
+          <div id="attitude_control_graph" style="width:50%;" class="d-none">
+          </div>
+          <div id="calories_comparison_graph" style="width:50%;" class="d-none">
+          </div>
+          <div id="carbohydrates_comparison_graph" style="width:50%;" class="d-none">
+          </div>
+          <div id="protein_comparison_graph" style="width:50%;" class="d-none">
+          </div>
+          <div id="fibre_comparison_graph" style="width:50%;" class="d-none">
+          </div>
+          <div id="vitamins_and_minerals_comparison_graph" style="width:50%;" class="d-none">
+          </div>
         </div>
       </div>
     </div>
@@ -437,7 +468,7 @@
       data: [800, 1000, 1100, 1100, 1400, 1300]
     }],
 
-  })
+  });
 </script>
 
 <script>
@@ -478,5 +509,154 @@
       data: [8, 9, 10, 11, 12, 13]
     }],
 
-  })
+  });
+</script>
+
+<script>
+  Highcharts.chart('agility_comparison_graph', {
+
+    chart: {
+      type: 'bar'
+    },
+    title: {
+      text: ''
+    },
+
+    yAxis: {
+      title: {
+        text: 'Score'
+      }
+    },
+    xAxis: {
+      categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6']
+    },
+    legend: {
+      layout: 'horizontal'
+    },
+    series: [{
+      name: 'Agility',
+      data: [11,12,13,14,15,16]
+    }],
+
+  });
+</script>
+
+<script>
+  Highcharts.chart('balance_comparison_graph', {
+
+    chart: {
+      type: 'bar'
+    },
+    title: {
+      text: ''
+    },
+
+    yAxis: {
+      title: {
+        text: 'Score'
+      }
+    },
+    xAxis: {
+      categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6']
+    },
+    legend: {
+      layout: 'horizontal'
+    },
+    series: [{
+      name: 'Balance',
+      color: '#212529',
+      data: [11, 12 ,11, 13, 14, 15]
+    }],
+
+  });
+</script>
+
+<script>
+  Highcharts.chart('endurance_comparison_graph', {
+
+    chart: {
+      type: 'bar'
+    },
+    title: {
+      text: ''
+    },
+
+    yAxis: {
+      title: {
+        text: 'Score'
+      }
+    },
+    xAxis: {
+      categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6']
+    },
+    legend: {
+      layout: 'horizontal'
+    },
+    series: [{
+      name: 'Endurance',
+      color: 'rgb(144, 237, 125)',
+      data: [9, 10, 11, 12, 13, 15]
+    }],
+
+  });
+</script>
+
+<script>
+  Highcharts.chart('flexibility_comparison_graph', {
+
+    chart: {
+      type: 'bar'
+    },
+    title: {
+      text: ''
+    },
+
+    yAxis: {
+      title: {
+        text: 'Score'
+      }
+    },
+    xAxis: {
+      categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6']
+    },
+    legend: {
+      layout: 'horizontal'
+    },
+    series: [{
+      name: 'Flexibility',
+      color: 'rgb(247, 163, 92)',
+      data: [8, 9, 10, 10, 12, 15]
+    }],
+
+  });
+</script>
+
+<script>
+  Highcharts.chart('speed_comparison_graph', {
+
+    chart: {
+      type: 'bar'
+    },
+    title: {
+      text: ''
+    },
+
+    yAxis: {
+      title: {
+        text: 'Score'
+      }
+    },
+    xAxis: {
+      categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6']
+    },
+    legend: {
+      layout: 'horizontal'
+    },
+    series: [{
+      name: 'Speed',
+      color: 'rgb(128, 133, 233)',
+      data: [8, 10, 11, 11, 14, 13]
+    }],
+
+  });
 </script>
