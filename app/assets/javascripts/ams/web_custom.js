@@ -303,13 +303,13 @@ $(function () {
     })
   }
 
-  $('.week-days li').on('click', function () {
-    var window_width = $(window).width();
-    var self = $(this);
-    if(self.offset().left === window_width){
-
-    }
-  });
+  // $('.week-days li').on('click', function () {
+  //   var window_width = $(window).width();
+  //   var self = $(this);
+  //   if(self.offset().left === window_width){
+  //
+  //   }
+  // });
 
   $('.mon').on('click', function () {
     var window_width = $(window).width();
@@ -325,8 +325,9 @@ $(function () {
     }
   });
 
-  $('.tue').on('click', function () {
+  $('.tue').on('click', function (ev) {
     var window_width = $(window).width();
+    $(this).siblings().find('a').unbind(ev);
     if ($('#tab-tue').offset().left === window_width) {
       // $('html, body').css({'overflow':'hidden'});
       $('#tab-tue').animate({
