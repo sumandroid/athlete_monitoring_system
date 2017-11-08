@@ -273,3 +273,97 @@ $(function () {
     }
   });
 }
+
+
+
+/*------------- Switch Days Schedule script ---------------*/
+
+$(function () {
+
+  var tab_height = $('#tab-mon').height();
+  $('.tab-content').height(600);
+  function get_curr_visible_day() {
+    var window_width = $(window).width();
+    $('.tab-content').find('.today').each(function () {
+      if($(this).offset().left === 0){
+        $(this).animate({
+          'left' : window_width
+        });
+      }
+    })
+  }
+
+  $('.week-days li').on('click', function () {
+    var window_width = $(window).width();
+    var self = $(this);
+    if(self.offset().left === window_width){
+
+    }
+  })
+
+  $('.mon').on('click', function () {
+    var window_width = $(window).width();
+    if ($('#tab-mon').offset().left === window_width) {
+      // $('html, body').css({'overflow':'hidden'});
+      $('#tab-mon').animate({
+        'left' : 0
+      });
+      get_curr_visible_day();
+    }
+  });
+
+  $('.tue').on('click', function () {
+    var window_width = $(window).width();
+    if ($('#tab-tue').offset().left === window_width) {
+      // $('html, body').css({'overflow':'hidden'});
+      $('#tab-tue').animate({
+        'left' : 0
+      });
+      get_curr_visible_day();
+    }
+  });
+
+  $('.wed').on('click', function () {
+    var window_width = $(window).width();
+    if ($('#tab-wed').offset().left === window_width) {
+      // $('html, body').css({'overflow':'hidden'});
+      $('#tab-wed').animate({
+        'left' : 0
+      });
+      get_curr_visible_day();
+    }
+  });
+
+  $('.thu').on('click', function () {
+    var window_width = $(window).width();
+    if ($('#tab-thu').offset().left === window_width) {
+      // $('html, body').css({'overflow':'hidden'});
+      $('#tab-thu').animate({
+        'left' : 0
+      });
+      get_curr_visible_day();
+    }
+  });
+
+  $('.fri').on('click', function () {
+    var window_width = $(window).width();
+    if ($('#tab-fri').offset().left === window_width) {
+      // $('html, body').css({'overflow':'hidden'});
+      $('#tab-fri').animate({
+        'left' : 0
+      });
+      get_curr_visible_day();
+    }
+  });
+
+  $('.sat').on('click', function () {
+    var window_width = $(window).width();
+    if ($('#tab-sat').offset().left === window_width) {
+      // $('html, body').css({'overflow':'hidden'});
+      $('#tab-sat').animate({
+        'left' : 0
+      });
+      get_curr_visible_day();
+    }
+  })
+});
