@@ -489,3 +489,8 @@ $(function () {
     }
   })
 });
+
+$(window).load(function () {
+  var day_nav = $('.mon').width();
+  $('.overlay-indicator').width(day_nav);
+});

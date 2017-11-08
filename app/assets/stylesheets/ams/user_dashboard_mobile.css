@@ -95,6 +95,12 @@
     width: 100%;
   }
 
+  .week-days li{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
   .mon a{
     font-weight: bold;
   }
