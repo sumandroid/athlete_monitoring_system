@@ -239,6 +239,7 @@ $(function () {
     if($('.trend-analysis-container').hasClass('d-none')){
       $('.schedule-container').addClass('d-none');
       $('.trend-analysis-container').removeClass('d-none');
+
     }
     else{
     }
@@ -248,6 +249,8 @@ $(function () {
     if($('.schedule-container').hasClass('d-none')){
       $('.schedule-container').removeClass('d-none');
       $('.trend-analysis-container').addClass('d-none');
+      var day_nav = $('.mon').width();
+      $('.overlay-indicator').width(day_nav);
     }
   })
 });
@@ -326,6 +329,9 @@ $(function () {
 /*------------- Switch Days Schedule script ---------------*/
 
 $(function () {
+
+  var day_nav = $('.mon.d-block').width();
+  $('.overlay-indicator').width(day_nav);
 
   var tab_height = $('#tab-mon').height();
   $('.tab-content').height(600);
@@ -490,7 +496,3 @@ $(function () {
   })
 });
 
-$(window).load(function () {
-  var day_nav = $('.mon').width();
-  $('.overlay-indicator').width(day_nav);
-});

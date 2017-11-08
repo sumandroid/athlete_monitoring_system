@@ -101,6 +101,18 @@
     padding-left: 12px;
     padding-right: 12px;
   }
+
+  #nav-tabs .nav-overlay{
+    width: 100%;
+    background-color: #323232;
+    bottom: 6px;
+  }
+
+  #nav-tabs .nav-overlay .overlay-indicator{
+    background-color: blue;
+    height: 3px;
+  }
+
   .mon a{
     font-weight: bold;
   }
