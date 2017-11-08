@@ -72,29 +72,33 @@
     color: white;
   }
 
-  .week-days>li>a{
-    font-weight: 600;
-    color: #95989A;
-  }
+  /*.week-days>li>a{*/
+    /*font-weight: 600;*/
+    /*color: #95989A;*/
+  /*}*/
 
-  .week-days>li>a:hover{
-    color: #F5F5F3;
-  }
+  /*.week-days>li>a:hover{*/
+    /*color: #F5F5F3;*/
+  /*}*/
 
-  .week-days>li>a.active,
-  .week-days>li>a.active:focus,
-  .week-days>li>a.active:hover {
-    font-size: 19px;
-    color: white;
-    font-weight: 700;
-  }
+  /*.week-days>li>a.active,*/
+  /*.week-days>li>a.active:focus,*/
+  /*.week-days>li>a.active:hover {*/
+    /*font-size: 19px;*/
+    /*color: white;*/
+    /*font-weight: 700;*/
+  /*}*/
 
   .week-days{
     /*position: fixed;*/
     /*top: 130px;*/
     width: 100%;
   }
-  
+
+  .mon a{
+    font-weight: bold;
+  }
+
   .tab-content{
     position: relative;
     overflow: hidden;
@@ -108,10 +112,10 @@
 
   #tab-mon{
     left: 0;
-    top:30px;
+    top:15px;
   }
   #tab-tue,#tab-wed,#tab-thu,#tab-fri,#tab-sat{
     left: 100vw;
-    top:30px;
+    top:15px;
   }
 }

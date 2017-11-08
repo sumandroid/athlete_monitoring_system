@@ -282,12 +282,22 @@ $(function () {
 
   var tab_height = $('#tab-mon').height();
   $('.tab-content').height(600);
-  function get_curr_visible_day() {
+
+  function get_curr_visible_day(curr) {
     var window_width = $(window).width();
     $('.tab-content').find('.today').each(function () {
       if($(this).offset().left === 0){
         $(this).animate({
           'left' : window_width
+        });
+      }
+    });
+
+    $('.week-days li a').each(function () {
+      if($(this).text() !== curr.text() && $(this).css('font-weight') === "bold"){
+        console.log(curr.text());
+        $(this).css({
+          'font-weight' : 'unset'
         });
       }
     })
@@ -299,7 +309,7 @@ $(function () {
     if(self.offset().left === window_width){
 
     }
-  })
+  });
 
   $('.mon').on('click', function () {
     var window_width = $(window).width();
@@ -308,7 +318,10 @@ $(function () {
       $('#tab-mon').animate({
         'left' : 0
       });
-      get_curr_visible_day();
+      $(this).find('a').css({
+        'font-weight' : 'bold'
+      });
+      get_curr_visible_day($(this).find('a'));
     }
   });
 
@@ -319,7 +332,10 @@ $(function () {
       $('#tab-tue').animate({
         'left' : 0
       });
-      get_curr_visible_day();
+      $(this).find('a').css({
+        'font-weight' : 'bold'
+      });
+      get_curr_visible_day($(this).find('a'));
     }
   });
 
@@ -330,7 +346,10 @@ $(function () {
       $('#tab-wed').animate({
         'left' : 0
       });
-      get_curr_visible_day();
+      $(this).find('a').css({
+        'font-weight' : 'bold'
+      });
+      get_curr_visible_day($(this).find('a'));
     }
   });
 
@@ -341,7 +360,10 @@ $(function () {
       $('#tab-thu').animate({
         'left' : 0
       });
-      get_curr_visible_day();
+      $(this).find('a').css({
+        'font-weight' : 'bold'
+      });
+      get_curr_visible_day($(this).find('a'));
     }
   });
 
@@ -352,7 +374,10 @@ $(function () {
       $('#tab-fri').animate({
         'left' : 0
       });
-      get_curr_visible_day();
+      $(this).find('a').css({
+        'font-weight' : 'bold'
+      });
+      get_curr_visible_day($(this).find('a'));
     }
   });
 
@@ -363,7 +388,10 @@ $(function () {
       $('#tab-sat').animate({
         'left' : 0
       });
-      get_curr_visible_day();
+      $(this).find('a').css({
+        'font-weight' : 'bold'
+      });
+      get_curr_visible_day($(this).find('a'));
     }
   })
 });
