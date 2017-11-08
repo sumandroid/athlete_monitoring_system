@@ -1,1 +1,2 @@
-<%= render(:partial => 'web_view')%>
+<%= render(:partial => 'web_view') if @web_view%>
+<%= render(:partial => 'mobile_view') if @mob_view%>

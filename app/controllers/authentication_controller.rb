@@ -7,6 +7,6 @@ class AuthenticationController < ApplicationController
 
   def verify_login
     user = User.find_by_email_and_password(params[:email], params[:password])
-    redirect_to user_dashboard_path if user.present?
+    redirect_to user_dashboard_path(:device => params[:device]) if user.present?
   end
 end

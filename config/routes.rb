@@ -7,5 +7,5 @@ Rails.application.routes.draw do
 
 
   #user routes
-  match 'dashboard'                       => 'user#dashboard',                :via => [:get],     :as => :user_dashboard
+  match 'dashboard/(:device)'         => 'user#dashboard',                :via => [:get],     :as => :user_dashboard
 end
