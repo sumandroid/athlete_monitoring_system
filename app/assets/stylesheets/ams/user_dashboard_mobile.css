@@ -6,7 +6,8 @@
     color: #222;
     background-color: white;
     font-size: 14px;
-    box-shadow: 0 -1px 14px 0 rgba(0,0,0,0.24);
+    box-shadow: 0 -1px 6px 0 rgba(0,0,0,0.24);
+    justify-content: space-evenly;
   }
 
   .select-footer img{
@@ -20,7 +21,20 @@
     padding: 3px;
   }
 
-  .select-footer .trend-analysis-select > div, .select-footer .schedule-select > div{
+  .select-footer .trend-analysis-select span, .select-footer .schedule-select span{
+    font-size: 13px;
+  }
+
+  .select-footer .trend-analysis-select span, .select-footer .trend-analysis-select i.fa{
+    color: rgb(34, 34, 34);
+  }
+
+  .select-footer .schedule-select span, .select-footer .schedule-select i.fa{
+    color: rgba(0, 0, 0, 0.54);
+  }
+
+  .select-footer .trend-analysis-select i, .select-footer .schedule-select i.fa{
+    font-size: 20px !important;
   }
 
   .helper{
@@ -66,28 +80,10 @@
 
 
   ul.week-days{
-    background-color: #323232;
+    background-color: #4d4d4d;
     display: flex;
-    justify-content: space-evenly;
     color: white;
   }
-
-  /*.week-days>li>a{*/
-    /*font-weight: 600;*/
-    /*color: #95989A;*/
-  /*}*/
-
-  /*.week-days>li>a:hover{*/
-    /*color: #F5F5F3;*/
-  /*}*/
-
-  /*.week-days>li>a.active,*/
-  /*.week-days>li>a.active:focus,*/
-  /*.week-days>li>a.active:hover {*/
-    /*font-size: 19px;*/
-    /*color: white;*/
-    /*font-weight: 700;*/
-  /*}*/
 
   .week-days{
     /*position: fixed;*/
@@ -96,10 +92,8 @@
   }
 
   .week-days li{
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
 
   #nav-tabs .nav-overlay{
@@ -109,8 +103,9 @@
   }
 
   #nav-tabs .nav-overlay .overlay-indicator{
-    background-color: blue;
+    background-color: white;
     height: 3px;
+    left: 3px;
   }
 
   .mon a{

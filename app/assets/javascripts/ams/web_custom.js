@@ -239,7 +239,12 @@ $(function () {
     if($('.trend-analysis-container').hasClass('d-none')){
       $('.schedule-container').addClass('d-none');
       $('.trend-analysis-container').removeClass('d-none');
-
+      $('.select-footer .trend-analysis-select i, .select-footer .trend-analysis-select span').css({
+        'color' : '#222'
+      });
+      $('.select-footer .schedule-select i, .select-footer .schedule-select span').css({
+        'color' : 'rgba(0, 0, 0, 0.54)'
+      });
     }
     else{
     }
@@ -249,8 +254,14 @@ $(function () {
     if($('.schedule-container').hasClass('d-none')){
       $('.schedule-container').removeClass('d-none');
       $('.trend-analysis-container').addClass('d-none');
-      var day_nav = $('.mon').width();
-      $('.overlay-indicator').width(day_nav);
+      $('.select-footer .schedule-select i, .select-footer .schedule-select span').css({
+        'color' : '#222'
+      });
+      $('.select-footer .trend-analysis-select i, .select-footer .trend-analysis-select span').css({
+        'color' : 'rgba(0, 0, 0, 0.54)'
+      });
+      var day_nav = $('.mon.col-2').width();
+      $('.overlay-indicator').width(day_nav + 27);
     }
   })
 });
@@ -330,9 +341,6 @@ $(function () {
 
 $(function () {
 
-  var day_nav = $('.mon.d-block').width();
-  $('.overlay-indicator').width(day_nav);
-
   var tab_height = $('#tab-mon').height();
   $('.tab-content').height(600);
 
@@ -370,6 +378,9 @@ $(function () {
       $(this).find('a').css({
         'font-weight' : 'bold'
       });
+      $('.overlay-indicator').animate({
+        left : 3
+      });
       get_curr_visible_day($(this).find('a'));
       setTimeout(function () {
         self.siblings().each(function () {
@@ -389,6 +400,9 @@ $(function () {
       // $('html, body').css({'overflow':'hidden'});
       $('#tab-tue').animate({
         'left' : 0
+      });
+      $('.overlay-indicator').animate({
+        left : $('.mon.col-2').width() + 30
       });
       $(this).find('a').css({
         'font-weight' : 'bold'
@@ -413,6 +427,9 @@ $(function () {
       $('#tab-wed').animate({
         'left' : 0
       });
+      $('.overlay-indicator').animate({
+        left : 2 * ($('.mon.col-2').width() + 30)
+      });
       $(this).find('a').css({
         'font-weight' : 'bold'
       });
@@ -435,6 +452,9 @@ $(function () {
       // $('html, body').css({'overflow':'hidden'});
       $('#tab-thu').animate({
         'left' : 0
+      });
+      $('.overlay-indicator').animate({
+        left : 3 * ($('.mon.col-2').width() + 30)
       });
       $(this).find('a').css({
         'font-weight' : 'bold'
@@ -459,6 +479,9 @@ $(function () {
       $('#tab-fri').animate({
         'left' : 0
       });
+      $('.overlay-indicator').animate({
+        left : 4 * ($('.mon.col-2').width() + 30)
+      });
       $(this).find('a').css({
         'font-weight' : 'bold'
       });
@@ -482,6 +505,9 @@ $(function () {
       // $('html, body').css({'overflow':'hidden'});
       $('#tab-sat').animate({
         'left' : 0
+      });
+      $('.overlay-indicator').animate({
+        left : 5 * ($('.mon.col-2').width() + 30)
       });
       $(this).find('a').css({
         'font-weight' : 'bold'
