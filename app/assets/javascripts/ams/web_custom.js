@@ -303,17 +303,13 @@ $(function () {
     })
   }
 
-  // $('.week-days li').on('click', function () {
-  //   var window_width = $(window).width();
-  //   var self = $(this);
-  //   if(self.offset().left === window_width){
-  //
-  //   }
-  // });
-
   $('.mon').on('click', function () {
     var window_width = $(window).width();
+    var self = $(this);
     if ($('#tab-mon').offset().left === window_width) {
+      $(this).siblings().each(function () {
+        $(this).css('pointer-events', 'none');
+      });
       // $('html, body').css({'overflow':'hidden'});
       $('#tab-mon').animate({
         'left' : 0
@@ -322,13 +318,21 @@ $(function () {
         'font-weight' : 'bold'
       });
       get_curr_visible_day($(this).find('a'));
+      setTimeout(function () {
+        self.siblings().each(function () {
+          $(this).css('pointer-events', 'unset');
+        });
+      }, 400);
     }
   });
 
-  $('.tue').on('click', function (ev) {
+  $('.tue').on('click', function () {
     var window_width = $(window).width();
-    $(this).siblings().find('a').unbind(ev);
+    var self = $(this);
     if ($('#tab-tue').offset().left === window_width) {
+      $(this).siblings().each(function () {
+        $(this).css('pointer-events', 'none');
+      });
       // $('html, body').css({'overflow':'hidden'});
       $('#tab-tue').animate({
         'left' : 0
@@ -337,12 +341,21 @@ $(function () {
         'font-weight' : 'bold'
       });
       get_curr_visible_day($(this).find('a'));
+      setTimeout(function () {
+        self.siblings().each(function () {
+          $(this).css('pointer-events', 'unset');
+        });
+      }, 400);
     }
   });
 
   $('.wed').on('click', function () {
     var window_width = $(window).width();
+    var self = $(this);
     if ($('#tab-wed').offset().left === window_width) {
+      $(this).siblings().each(function () {
+        $(this).css('pointer-events', 'none');
+      });
       // $('html, body').css({'overflow':'hidden'});
       $('#tab-wed').animate({
         'left' : 0
@@ -351,12 +364,21 @@ $(function () {
         'font-weight' : 'bold'
       });
       get_curr_visible_day($(this).find('a'));
+      setTimeout(function () {
+        self.siblings().each(function () {
+          $(this).css('pointer-events', 'unset');
+        });
+      }, 400);
     }
   });
 
   $('.thu').on('click', function () {
     var window_width = $(window).width();
+    var self = $(this);
     if ($('#tab-thu').offset().left === window_width) {
+      $(this).siblings().each(function () {
+        $(this).css('pointer-events', 'none');
+      });
       // $('html, body').css({'overflow':'hidden'});
       $('#tab-thu').animate({
         'left' : 0
@@ -365,12 +387,21 @@ $(function () {
         'font-weight' : 'bold'
       });
       get_curr_visible_day($(this).find('a'));
+      setTimeout(function () {
+        self.siblings().each(function () {
+          $(this).css('pointer-events', 'unset');
+        });
+      }, 400);
     }
   });
 
   $('.fri').on('click', function () {
     var window_width = $(window).width();
+    var self = $(this);
     if ($('#tab-fri').offset().left === window_width) {
+      $(this).siblings().each(function () {
+        $(this).css('pointer-events', 'none');
+      });
       // $('html, body').css({'overflow':'hidden'});
       $('#tab-fri').animate({
         'left' : 0
@@ -379,12 +410,22 @@ $(function () {
         'font-weight' : 'bold'
       });
       get_curr_visible_day($(this).find('a'));
+      setTimeout(function () {
+        self.siblings().each(function () {
+          $(this).css('pointer-events', 'unset');
+        });
+      }, 400);
     }
   });
 
   $('.sat').on('click', function () {
     var window_width = $(window).width();
+    var self = $(this);
+
     if ($('#tab-sat').offset().left === window_width) {
+      $(this).siblings().each(function () {
+        $(this).css('pointer-events', 'none');
+      });
       // $('html, body').css({'overflow':'hidden'});
       $('#tab-sat').animate({
         'left' : 0
@@ -393,6 +434,11 @@ $(function () {
         'font-weight' : 'bold'
       });
       get_curr_visible_day($(this).find('a'));
+      setTimeout(function () {
+        self.siblings().each(function () {
+          $(this).css('pointer-events', 'unset');
+        });
+      }, 400);
     }
   })
 });
