@@ -51,7 +51,7 @@
   }
 
   .graph-container {
-    height: 400px;
+    height: auto;
     position: unset;
   }
 
@@ -64,9 +64,13 @@
     width: unset;
   }
 
+  .comparison-graph-container {
+    height: auto;
+  }
+
   .comparison_graph_div{
     position: unset;
-    height: 569px;
+    height: auto;
   }
 
   #physical_comparison_graph, #tennis_comparison_graph{
