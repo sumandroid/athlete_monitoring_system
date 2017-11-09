@@ -51,7 +51,27 @@
   }
 
   .graph-container {
-    height: auto;
+    height: 400px;
+    position: unset;
+  }
+
+  #fitness_graph, #mental_graph, #nutrition_graph{
+    position: unset;
+    transform: none;
+  }
+
+  .comparison{
+    width: unset;
+  }
+
+  .comparison_graph_div{
+    position: unset;
+    height: 569px;
+  }
+
+  #physical_comparison_graph, #tennis_comparison_graph{
+    position: unset;
+    transform: none;
   }
 
   table{

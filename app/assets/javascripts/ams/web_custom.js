@@ -238,6 +238,7 @@ $(function () {
   $('.trend-analysis-select').on('click', function () {
     if($('.trend-analysis-container').hasClass('d-none')){
       $('.schedule-container').addClass('d-none');
+      $('.comparison').addClass('d-none');
       $('.trend-analysis-container').removeClass('d-none');
       $('.select-footer .trend-analysis-select i, .select-footer .trend-analysis-select span').css({
         'color' : '#222'
@@ -245,8 +246,9 @@ $(function () {
       $('.select-footer .schedule-select i, .select-footer .schedule-select span').css({
         'color' : 'rgba(0, 0, 0, 0.54)'
       });
-    }
-    else{
+      $('.select-footer .comparison-select i, .select-footer .comparison-select span').css({
+        'color' : 'rgba(0, 0, 0, 0.54)'
+      });
     }
   });
 
@@ -254,14 +256,35 @@ $(function () {
     if($('.schedule-container').hasClass('d-none')){
       $('.schedule-container').removeClass('d-none');
       $('.trend-analysis-container').addClass('d-none');
+      $('.comparison').addClass('d-none');
       $('.select-footer .schedule-select i, .select-footer .schedule-select span').css({
         'color' : '#222'
       });
       $('.select-footer .trend-analysis-select i, .select-footer .trend-analysis-select span').css({
         'color' : 'rgba(0, 0, 0, 0.54)'
       });
+      $('.select-footer .comparison-select i, .select-footer .comparison-select span').css({
+        'color' : 'rgba(0, 0, 0, 0.54)'
+      });
       var day_nav = $('.mon.col-2').width();
       $('.overlay-indicator').width(day_nav + 27);
+    }
+  })
+
+  $('.comparison-select').on('click', function () {
+    if($('.comparison').hasClass('d-none')){
+      $('.comparison').removeClass('d-none');
+      $('.trend-analysis-container').addClass('d-none');
+      $('.schedule-container').addClass('d-none');
+      $('.select-footer .comparison-select i, .select-footer .comparison-select span').css({
+        'color' : '#222'
+      });
+      $('.select-footer .trend-analysis-select i, .select-footer .trend-analysis-select span').css({
+        'color' : 'rgba(0, 0, 0, 0.54)'
+      });
+      $('.select-footer .schedule-select i, .select-footer .schedule-select span').css({
+        'color' : 'rgba(0, 0, 0, 0.54)'
+      });
     }
   })
 });
@@ -293,19 +316,19 @@ $(function () {
   $(document).on('change', 'select.analysis-dropdown', function () {
     var self = $(this);
     if(self.val() == 'physical'){
-      self.closest('div.col-sm-6').find('.graph-container').find('#fitness_graph').removeClass('d-none');
-      self.closest('div.col-sm-6').find('.graph-container').find('#nutrition_graph').addClass('d-none');
-      self.closest('div.col-sm-6').find('.graph-container').find('#mental_graph').addClass('d-none');
+      self.closest('div.main-container').find('.graph-container').find('#fitness_graph').removeClass('d-none');
+      self.closest('div.main-container').find('.graph-container').find('#nutrition_graph').addClass('d-none');
+      self.closest('div.main-container').find('.graph-container').find('#mental_graph').addClass('d-none');
     }
     if(self.val() == 'mental'){
-      self.closest('div.col-sm-6').find('.graph-container').find('#fitness_graph').addClass('d-none');
-      self.closest('div.col-sm-6').find('.graph-container').find('#nutrition_graph').addClass('d-none');
-      self.closest('div.col-sm-6').find('.graph-container').find('#mental_graph').removeClass('d-none');
+      self.closest('div.main-container').find('.graph-container').find('#fitness_graph').addClass('d-none');
+      self.closest('div.main-container').find('.graph-container').find('#nutrition_graph').addClass('d-none');
+      self.closest('div.main-container').find('.graph-container').find('#mental_graph').removeClass('d-none');
     }
     if(self.val() == 'nutrition'){
-      self.closest('div.col-sm-6').find('.graph-container').find('#fitness_graph').addClass('d-none');
-      self.closest('div.col-sm-6').find('.graph-container').find('#nutrition_graph').removeClass('d-none');
-      self.closest('div.col-sm-6').find('.graph-container').find('#mental_graph').addClass('d-none');
+      self.closest('div.main-container').find('.graph-container').find('#fitness_graph').addClass('d-none');
+      self.closest('div.main-container').find('.graph-container').find('#nutrition_graph').removeClass('d-none');
+      self.closest('div.main-container').find('.graph-container').find('#mental_graph').addClass('d-none');
     }
   });
 }
@@ -332,10 +355,12 @@ $(function () {
 
 $(function () {
 
-  if($(window).width() > 767){
+  if($(window).width() <= 767 ){
     var tab_height = $('#tab-1').height();
-    $('.tab-content').height(tab_height);
+    $('.tab-content').height(600);
+  }
 
+  if($(window).width() > 767){
     var graph_width = $('#fitness_graph').width();
     $('#mental_graph, #nutrition_graph, #tennis_comparison_graph').width(graph_width);
   }
