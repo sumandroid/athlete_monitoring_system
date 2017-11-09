@@ -7,33 +7,40 @@
     background-color: white;
     font-size: 14px;
     box-shadow: 0 -1px 6px 0 rgba(0,0,0,0.24);
-    justify-content: space-evenly;
   }
 
   .select-footer img{
     height: 30px;
   }
 
-  .select-footer .trend-analysis-select, .select-footer .schedule-select{
-    border-radius: 3px;
-    justify-content: space-around;
-    /*background-color: #F5F5F3;*/
+  .select-footer .trend-analysis-select,
+  .select-footer .schedule-select,
+  .select-footer .comparison-select,
+  .select-footer .events-select{
     padding: 3px;
   }
 
-  .select-footer .trend-analysis-select span, .select-footer .schedule-select span{
-    font-size: 13px;
+  .select-footer .trend-analysis-select span,
+  .select-footer .schedule-select span,
+  .select-footer .comparison-select span,
+  .select-footer .events-select span{
+    font-size: 11px;
   }
 
   .select-footer .trend-analysis-select span, .select-footer .trend-analysis-select i.fa{
     color: rgb(34, 34, 34);
   }
 
-  .select-footer .schedule-select span, .select-footer .schedule-select i.fa{
+  .select-footer .schedule-select span, .select-footer .schedule-select i.fa,
+  .select-footer .comparison-select span, .select-footer .comparison-select i.fa,
+  .select-footer .events-select span, .select-footer .events-select i.fa{
     color: rgba(0, 0, 0, 0.54);
   }
 
-  .select-footer .trend-analysis-select i, .select-footer .schedule-select i.fa{
+  .select-footer .trend-analysis-select i.fa,
+  .select-footer .schedule-select i.fa,
+  .select-footer .comparison-select i.fa,
+  .select-footer .events-select i.fa{
     font-size: 20px !important;
   }
 
@@ -55,6 +62,11 @@
     position: unset;
   }
 
+  .trend-analysis-container{
+    height: auto;
+    margin-bottom: 40px;
+  }
+
   #fitness_graph, #mental_graph, #nutrition_graph{
     position: unset;
     transform: none;
@@ -66,6 +78,7 @@
 
   .comparison-graph-container {
     height: auto;
+    margin-bottom: 40px;
   }
 
   .comparison_graph_div{
@@ -154,5 +167,26 @@
   #tab-tue,#tab-wed,#tab-thu,#tab-fri,#tab-sat{
     left: 100vw;
     top:15px;
+  }
+
+  #tab-upcoming, #tab-past{
+    position: absolute;
+    width: 100%;
+  }
+
+  #tab-past{
+    left: 100vw;
+  }
+
+  .dashboard-fixed-portlet .event-date{
+    font-size: 13px;
+  }
+
+  .dashboard-fixed-portlet .event-name{
+    font-size: 13px;
+  }
+
+  .dashboard-fixed-portlet .event-venue{
+    font-size: 12px;
   }
 }

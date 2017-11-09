@@ -143,7 +143,7 @@ header .athlete-img img{
 }
 
 .comparison-analysis{
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .comparison-graph-container{
@@ -151,6 +151,11 @@ header .athlete-img img{
   margin-top: 10px;
   border: 1px solid grey;
   width: 100%;
+}
+
+.events-container{
+  margin-top: 10px;
+  height: 569px;
 }
 
 .comparison_graph_div{
@@ -202,7 +207,10 @@ header .athlete-img img{
   color: #797979;
 }
 
-.trend-analysis .schedule , .week-container .schedule, .comparison-analysis .schedule{
+.trend-analysis .schedule,
+.week-container .schedule,
+.comparison-analysis .schedule,
+.events .schedule{
   font-size: 22px;
   color: #797979;
   font-weight: 700;
@@ -227,8 +235,9 @@ header .athlete-img img{
   color: #222;
 }
 
-.tabs-container ul.nav-tabs li{
-  padding: 0 15px;
+.tabs-container ul.nav-tabs li,
+.events-container ul.nav-tabs li{
+  padding: 0 12px;
 }
 
 .table-title{
@@ -332,4 +341,33 @@ td.drill-stat{
 
 .events-container{
   border: 1px solid grey;
+}
+
+.dashboard-fixed-portlet{
+  box-shadow: 0 1px 11px 0 rgba(0,0,0,0.24);
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.dashboard-fixed-portlet img{
+  height: 50px;
+  width: 50px;
+}
+
+.dashboard-fixed-portlet .event-name-date,
+.dashboard-fixed-portlet .event-venue{
+  margin: 7px 0;
+}
+
+.dashboard-fixed-portlet .event-date{
+  margin-left: 15px;
+}
+
+.dashboard-fixed-portlet .event-name{
+  font-weight: 600;
+  color: #797979;
+}
+
+.dashboard-fixed-portlet .event-venue{
+  color: #797979;
 }

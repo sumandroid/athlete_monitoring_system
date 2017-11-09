@@ -2,7 +2,7 @@
 <div class="main-container">
   <div class="container-fluid text-center">
     <!--<div class="assessment-heading text-center font-weight-bold">Physical Fitness</div>-->
-    <div class="row mt-3 ">
+    <div class="row mt-3 mb-5">
       <div class="trend-analysis-container mx-auto" style="width: 95%;">
         <div class="trend-analysis make-flex mt-3 mb-4">
           <div class="schedule">Trend Analysis</div>
@@ -528,7 +528,7 @@
         </div>
       </div>
       <div class="comparison d-none">
-        <div class="comparison-analysis make-flex">
+        <div class="comparison-analysis mt-3 mb-4 make-flex">
           <div class="schedule">Comparison</div>
           <div class="trend-select position-relative">
             <select class="analysis-dropdown comparison_analysis">
@@ -558,26 +558,141 @@
           </div>
         </div>
       </div>
+      <div class="events d-none w-100">
+        <div>
+          <div class="schedule mt-2 mb-3">Events</div>
+          <div id="nav-tabs" class="position-relative">
+            <ul class="week-days">
+              <li class="upcoming col-6"><a class="active">Upcoming</a></li>
+              <li class="past col-6"><a>Past</a></li>
+            </ul>
+            <div class="nav-overlay position-absolute">
+              <div class="overlay-indicator position-absolute">
+
+              </div>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div id="tab-upcoming" class="event-tab">
+              <div class="panel-body">
+                <div class="table-title tab-heading-text">Upcoming Events</div>
+                <div class="athlete-drills">
+                  <div class="dashboard-fixed-portlet make-flex">
+                    <div>
+                      <div>
+                        <div class="event-name-date">
+                          <span class="event-name">Tennis</span>
+                          <span class="event-date">
+                          <i class="fa fa-calendar" aria-hidden="true"></i> December 10, 2017
+                        </span>
+                        </div>
+                      </div>
+                      <div class="event-venue">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <span class="address">Gurgaon Valley School, Sec-56, Gurgaon</span>
+                      </div>
+                    </div>
+                    <div class="event-icon">
+                      <img src="/tennis.png">
+                    </div>
+                  </div>
+                  <div class="dashboard-fixed-portlet make-flex">
+                    <div>
+                      <div>
+                        <div class="event-name-date">
+                          <span class="event-name">Physical Assessment</span>
+                          <span class="event-date">
+                          <i class="fa fa-calendar" aria-hidden="true"></i> December 15, 2017
+                        </span>
+                        </div>
+                      </div>
+                      <div class="event-venue">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <span class="address">Gurgaon Valley School, Sec-56, Gurgaon</span>
+                      </div>
+                    </div>
+                    <div class="event-icon">
+                      <img src="/assessment.png">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="tab-past" class="event-tab">
+              <div class="panel-body">
+                <div class="table-title tab-heading-text">Past Events</div>
+                <div class="athlete-drills">
+                  <div class="dashboard-fixed-portlet make-flex">
+                    <div>
+                      <div>
+                        <div class="event-name-date">
+                          <span class="event-name">Tennis Assessment</span>
+                          <span class="event-date">
+                          <i class="fa fa-calendar" aria-hidden="true"></i> October 27, 2017
+                        </span>
+                        </div>
+                      </div>
+                      <div class="event-venue">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <span class="address">Gurgaon Valley School, Sec-56, Gurgaon</span>
+                      </div>
+                    </div>
+                    <div class="event-icon">
+                      <img src="/tennis.png">
+                    </div>
+                  </div>
+                  <div class="dashboard-fixed-portlet make-flex">
+                    <div>
+                      <div>
+                        <div class="event-name-date">
+                          <span class="event-name">Tennis Assessment</span>
+                          <span class="event-date">
+                          <i class="fa fa-calendar" aria-hidden="true"></i> October 10, 2017
+                        </span>
+                        </div>
+                      </div>
+                      <div class="event-venue">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <span class="address">Gurgaon Valley School, Sec-56, Gurgaon</span>
+                      </div>
+                    </div>
+                    <div class="event-icon">
+                      <img src="/tennis.png">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 <div class="select-footer make-flex">
-  <div class="">
+  <div class="col-3">
     <div class="trend-analysis-select text-center">
       <i class="fa fa-bar-chart" aria-hidden="true"></i>
       <div><span>Trends</span></div>
     </div>
   </div>
-  <div class="">
+  <div class="col-3">
     <div class="schedule-select text-center">
       <i class="fa fa-calendar" aria-hidden="true"></i>
       <div><span>Schedule</span></div>
     </div>
   </div>
-  <div>
+  <div class="col-3">
     <div class="comparison-select text-center">
       <i class="fa fa-balance-scale" aria-hidden="true"></i>
       <div><span>Comparison</span></div>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="events-select text-center">
+      <i class="fa fa-history" aria-hidden="true"></i>
+      <div><span>Events</span></div>
     </div>
   </div>
 </div>
