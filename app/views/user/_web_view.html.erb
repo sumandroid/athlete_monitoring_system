@@ -327,14 +327,13 @@
       </div>
     </div>
     <div class="row my-5">
-      <div class="comparision">
-        <div class="comparision-analysis make-flex">
-          <div class="schedule">Comparision</div>
+      <div class="comparison">
+        <div class="comparison-analysis make-flex">
+          <div class="schedule">Comparison</div>
           <div class="trend-select position-relative">
             <select class="analysis-dropdown comparison_analysis">
               <option value="physical">Physical</option>
-              <option value="mental">Mental</option>
-              <option value="nutrition">Nutrition</option>
+              <option value="tennis">Tennis</option>
             </select>
             <i class="fa fa-caret-down position-absolute"></i>
           </div>
@@ -350,61 +349,11 @@
             <i class="fa fa-caret-down position-absolute"></i>
           </div>
         </div>
-        <div class="comparision-graph-container make-flex">
-          <div class="col-6">
-            <div id="agility_comparison_graph">
+        <div class="comparison-graph-container make-flex">
+          <div class="col-8 comparison_graph_div">
+            <div id="physical_comparison_graph">
             </div>
-            <div id="balance_comparison_graph" class="d-none">
-            </div>
-            <div id="endurance_comparison_graph" class="d-none">
-            </div>
-            <div id="flexibility_comparison_graph" class="d-none">
-            </div>
-            <div id="speed_comparison_graph" class="d-none">
-            </div>
-            <div id="attention_control_graph" class="d-none">
-            </div>
-            <div id="negative_energy_graph" class="d-none">
-            </div>
-            <div id="positive_energy_graph" class="d-none">
-            </div>
-            <div id="motivation_level_graph" class="d-none">
-            </div>
-            <div id="attitude_control_graph" class="d-none">
-            </div>
-            <div id="calories_comparison_graph" class="d-none">
-            </div>
-            <div id="carbohydrates_comparison_graph" class="d-none">
-            </div>
-            <div id="protein_comparison_graph" class="d-none">
-            </div>
-            <div id="fibre_comparison_graph" class="d-none">
-            </div>
-            <div id="vitamins_and_minerals_comparison_graph" class="d-none">
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="checkboxes">
-              <div class="form-check text-left">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="" value="option1"> You
-                </label>
-              </div>
-              <div class="form-check text-left">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="" value="option2"> Your Peers
-                </label>
-              </div>
-              <div class="form-check text-left">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="" value="option3"> National Record
-                </label>
-              </div>
-              <div class="form-check text-left">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="" value="option3"> National Record
-                </label>
-              </div>
+            <div id="tennis_comparison_graph" class="d-none">
             </div>
           </div>
         </div>
@@ -539,13 +488,13 @@
 </script>
 
 <script>
-  Highcharts.chart('agility_comparison_graph', {
+  Highcharts.chart('physical_comparison_graph', {
 
     chart: {
       type: 'bar'
     },
     title: {
-      text: ''
+      text: 'Fitness Benchmark'
     },
 
     yAxis: {
@@ -554,27 +503,36 @@
       }
     },
     xAxis: {
-      categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6']
-    },
-    legend: {
-      layout: 'horizontal'
+      categories: ['Agility', 'Balance', 'Endurance', 'Flexibility', 'Speed']
     },
     series: [{
-      name: 'Agility',
-      data: [11, 12, 13, 14, 15, 16]
-    }],
+      name: 'You',
+      data: [11, 12, 13, 12, 10]
+    },
+      {
+        name: 'Your Peers',
+        data: [11, 12, 11, 12, 13]
+      },
+      {
+        name: 'National Record',
+        data: [18, 17, 19, 20, 19]
+      },
+      {
+        name: 'World Record',
+        data: [19, 19, 20, 20, 19]
+      }],
 
   });
 </script>
 
 <script>
-  Highcharts.chart('balance_comparison_graph', {
+  Highcharts.chart('tennis_comparison_graph', {
 
     chart: {
       type: 'bar'
     },
     title: {
-      text: ''
+      text: 'Tennis Benchmark'
     },
 
     yAxis: {
@@ -583,106 +541,24 @@
       }
     },
     xAxis: {
-      categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6']
-    },
-    legend: {
-      layout: 'horizontal'
+      categories: ['Forehand Accuracy', 'Backhand Accuracy', 'Serve Speed',]
     },
     series: [{
-      name: 'Balance',
-      color: '#212529',
-      data: [11, 12, 11, 13, 14, 15]
-    }],
-
-  });
-</script>
-
-<script>
-  Highcharts.chart('endurance_comparison_graph', {
-
-    chart: {
-      type: 'bar'
+      name: 'You',
+      data: [11, 12, 13]
     },
-    title: {
-      text: ''
-    },
-
-    yAxis: {
-      title: {
-        text: 'Score'
-      }
-    },
-    xAxis: {
-      categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6']
-    },
-    legend: {
-      layout: 'horizontal'
-    },
-    series: [{
-      name: 'Endurance',
-      color: 'rgb(144, 237, 125)',
-      data: [9, 10, 11, 12, 13, 15]
-    }],
-
-  });
-</script>
-
-<script>
-  Highcharts.chart('flexibility_comparison_graph', {
-
-    chart: {
-      type: 'bar'
-    },
-    title: {
-      text: ''
-    },
-
-    yAxis: {
-      title: {
-        text: 'Score'
-      }
-    },
-    xAxis: {
-      categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6']
-    },
-    legend: {
-      layout: 'horizontal'
-    },
-    series: [{
-      name: 'Flexibility',
-      color: 'rgb(247, 163, 92)',
-      data: [8, 9, 10, 10, 12, 15]
-    }],
-
-  });
-</script>
-
-<script>
-  Highcharts.chart('speed_comparison_graph', {
-
-    chart: {
-      type: 'bar'
-    },
-    title: {
-      text: ''
-    },
-
-    yAxis: {
-      title: {
-        text: 'Score'
-      }
-    },
-    xAxis: {
-      categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6']
-    },
-    legend: {
-      layout: 'horizontal'
-    },
-    series: [{
-      name: 'Speed',
-      color: 'rgb(128, 133, 233)',
-      data: [8, 10, 11, 11, 14, 13]
-    }],
+      {
+        name: 'Your Peers',
+        data: [11, 12, 11]
+      },
+      {
+        name: 'National Record',
+        data: [18, 17, 19]
+      },
+      {
+        name: 'World Record',
+        data: [19, 19, 20]
+      }],
 
   });
 </script>

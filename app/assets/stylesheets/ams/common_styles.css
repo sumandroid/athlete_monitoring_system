@@ -130,16 +130,16 @@ header .athlete-img img{
   border: 1px solid grey;
 }
 
-.comparision{
+.comparison{
   width: 90%;
   margin: 0 auto;
 }
 
-.comparision-analysis{
+.comparison-analysis{
   justify-content: space-evenly;
 }
 
-.comparision-graph-container{
+.comparison-graph-container{
   height: 569px;
   margin-top: 10px;
   border: 1px solid grey;
@@ -210,7 +210,7 @@ header .athlete-img img{
   color: #797979;
 }
 
-.trend-analysis .schedule , .week-container .schedule, .comparision-analysis .schedule{
+.trend-analysis .schedule , .week-container .schedule, .comparison-analysis .schedule{
   font-size: 22px;
   color: #797979;
   font-weight: 700;
