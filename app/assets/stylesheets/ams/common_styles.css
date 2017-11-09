@@ -128,6 +128,13 @@ header .athlete-img img{
   height: 569px;
   margin-top: 10px;
   border: 1px solid grey;
+  position: relative;
+}
+
+#fitness_graph, #mental_graph, #nutrition_graph{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .comparison{
@@ -144,38 +151,19 @@ header .athlete-img img{
   margin-top: 10px;
   border: 1px solid grey;
   width: 100%;
+  position: relative;
+}
+
+#physical_comparison_graph, #tennis_comparison_graph{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .tabs-container{
   margin-top: 10px;
   border: 1px solid grey;
 }
-
-/*.week-assessment{*/
-  /*width: 100%;*/
-  /*border-bottom: 1px solid grey;*/
-  /*justify-content: space-around;*/
-/*}*/
-
-/*.week-assessment .week{*/
-  /*font-size: 18px;*/
-  /*color: #797979;*/
-/*}*/
-
-/*.week-assessment .week.week-active{*/
-  /*color: #2ec036;*/
-/*}*/
-
-/*.week-assessment .lr-angle{*/
-  /*right: 20px;*/
-  /*color: #797979;*/
-  /*top: 17px;*/
-/*}*/
-
-/*.week-assessment .lr-angle i:hover{*/
-  /*cursor: pointer;*/
-  /*color: #222;*/
-/*}*/
 
 
 .trend-analysis{
@@ -336,4 +324,8 @@ td.drill-stat{
   text-align: left;
   padding-left: 10px;
   color: #797979;;
+}
+
+.events-container{
+  border: 1px solid grey;
 }

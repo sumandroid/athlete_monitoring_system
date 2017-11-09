@@ -16,13 +16,13 @@
           </div>
         </div>
         <div class="graph-container">
-          <div id="fitness_graph" style="width:100%;">
+          <div id="fitness_graph" class="w-100">
 
           </div>
-          <div id="nutrition_graph" class="d-none">
+          <div id="nutrition_graph" class="d-none w-100">
 
           </div>
-          <div id="mental_graph" class="d-none">
+          <div id="mental_graph" class="d-none w-100">
 
           </div>
         </div>
@@ -39,21 +39,6 @@
           </div>
         </div>
         <div class="tabs-container">
-          <!--<div class="week-assessment make-flex p-tb-20 position-relative">-->
-          <!--<div class="assessment tab-heading-text">Physical Fitness</div>-->
-          <!--<div class="week week-active">Week 1</div>-->
-          <!--<div class="lr-angle position-absolute">-->
-          <!--<i class="fa fa-angle-left fa-2x mr-2" aria-hidden="true"></i>-->
-          <!--<i class="fa fa-angle-right fa-2x" aria-hidden="true"></i>-->
-          <!--</div>-->
-          <!--</div>-->
-          <!--<div class="week-container position-relative">-->
-          <!--<div class="week week-active">Week 1</div>-->
-          <!--<div class="lr-angle position-absolute">-->
-          <!--<i class="fa fa-angle-left fa-2x mr-2" aria-hidden="true"></i>-->
-          <!--<i class="fa fa-angle-right fa-2x" aria-hidden="true"></i>-->
-          <!--</div>-->
-          <!--</div>-->
           <div class="clr"></div>
           <ul class="nav nav-tabs nav-justified p-tb-20">
             <li class=""><a class="active" data-toggle="tab" href="#tab-1" aria-expanded="true">Monday</a></li>
@@ -327,7 +312,7 @@
       </div>
     </div>
     <div class="row my-5">
-      <div class="comparison">
+      <div class="col-6 comparison">
         <div class="comparison-analysis make-flex">
           <div class="schedule">Comparison</div>
           <div class="trend-select position-relative">
@@ -338,25 +323,28 @@
             <i class="fa fa-caret-down position-absolute"></i>
           </div>
 
-          <div class="trend-select position-relative">
-            <select class="analysis-dropdown attribute_select" style="width:250px;">
-              <option value="agility" selected>Agility</option>
-              <option value="balance">Balance</option>
-              <option value="endurance">Endurance</option>
-              <option value="flexibility">Flexibility</option>
-              <option value="speed">Speed</option>
-            </select>
-            <i class="fa fa-caret-down position-absolute"></i>
+          <!--<div class="trend-select position-relative">-->
+            <!--<select class="analysis-dropdown attribute_select" style="width:250px;">-->
+              <!--<option value="agility" selected>Agility</option>-->
+              <!--<option value="balance">Balance</option>-->
+              <!--<option value="endurance">Endurance</option>-->
+              <!--<option value="flexibility">Flexibility</option>-->
+              <!--<option value="speed">Speed</option>-->
+            <!--</select>-->
+            <!--<i class="fa fa-caret-down position-absolute"></i>-->
+          <!--</div>-->
+        </div>
+        <div class="comparison-graph-container">
+          <div class="comparison_graph_div">
+            <div id="physical_comparison_graph" class="w-100">
+            </div>
+            <div id="tennis_comparison_graph" class="d-none w-100">
+            </div>
           </div>
         </div>
-        <div class="comparison-graph-container make-flex">
-          <div class="col-8 comparison_graph_div">
-            <div id="physical_comparison_graph">
-            </div>
-            <div id="tennis_comparison_graph" class="d-none">
-            </div>
-          </div>
-        </div>
+      </div>
+      <div class="col-6 events">
+        <div class="events-container"></div>
       </div>
     </div>
   </div>

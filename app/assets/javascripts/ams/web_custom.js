@@ -332,8 +332,10 @@ $(function () {
 
 $(function () {
 
-  var tab_height = $('#tab-mon').height();
-  $('.tab-content').height(600);
+  if($(window).width() > 767){
+    var tab_height = $('#tab-1').height();
+    $('.tab-content').height(tab_height);
+  }x
 
   function get_curr_visible_day(curr) {
     var window_width = $(window).width();
