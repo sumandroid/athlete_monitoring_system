@@ -335,7 +335,10 @@ $(function () {
   if($(window).width() > 767){
     var tab_height = $('#tab-1').height();
     $('.tab-content').height(tab_height);
-  }x
+
+    var graph_width = $('#fitness_graph').width();
+    $('#mental_graph, #nutrition_graph, #tennis_comparison_graph').width(graph_width);
+  }
 
   function get_curr_visible_day(curr) {
     var window_width = $(window).width();

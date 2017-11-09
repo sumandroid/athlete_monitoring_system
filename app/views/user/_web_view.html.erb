@@ -394,10 +394,12 @@
 </script>
 
 <script>
+  var trends_graph_width = $('#fitness_graph').width();
   Highcharts.chart('nutrition_graph', {
 
     chart: {
-      type: 'column'
+      type: 'column',
+      width: trends_graph_width
     },
     title: {
       text: ''
@@ -435,10 +437,12 @@
 </script>
 
 <script>
+  var trends_graph_width = $('#fitness_graph').width();
   Highcharts.chart('mental_graph', {
 
     chart: {
-      type: 'column'
+      type: 'column',
+      width: trends_graph_width
     },
     title: {
       text: ''
@@ -514,10 +518,12 @@
 </script>
 
 <script>
+  var comparision_graph_width = $('#physical_comparison_graph').width();
   Highcharts.chart('tennis_comparison_graph', {
 
     chart: {
-      type: 'bar'
+      type: 'bar',
+      width: comparision_graph_width
     },
     title: {
       text: 'Tennis Benchmark'

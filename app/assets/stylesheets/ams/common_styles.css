@@ -151,7 +151,11 @@ header .athlete-img img{
   margin-top: 10px;
   border: 1px solid grey;
   width: 100%;
+}
+
+.comparison_graph_div{
   position: relative;
+  height: 569px;
 }
 
 #physical_comparison_graph, #tennis_comparison_graph{
