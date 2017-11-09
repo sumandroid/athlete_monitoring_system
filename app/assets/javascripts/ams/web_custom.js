@@ -271,19 +271,19 @@ $(function () {
   $(document).on('change', 'select.analysis-dropdown', function () {
     var self = $(this);
     if(self.val() == 'physical'){
-      self.closest('div.col-sm-6').find('.graph-container').find('#fitness_graph').removeClass('d-none');
-      self.closest('div.col-sm-6').find('.graph-container').find('#nutrition_graph').addClass('d-none');
-      self.closest('div.col-sm-6').find('.graph-container').find('#mental_graph').addClass('d-none');
+      self.closest('div.main-container').find('.graph-container').find('#fitness_graph').removeClass('d-none');
+      self.closest('div.main-container').find('.graph-container').find('#nutrition_graph').addClass('d-none');
+      self.closest('div.main-container').find('.graph-container').find('#mental_graph').addClass('d-none');
     }
     if(self.val() == 'mental'){
-      self.closest('div.col-sm-6').find('.graph-container').find('#fitness_graph').addClass('d-none');
-      self.closest('div.col-sm-6').find('.graph-container').find('#nutrition_graph').addClass('d-none');
-      self.closest('div.col-sm-6').find('.graph-container').find('#mental_graph').removeClass('d-none');
+      self.closest('div.main-container').find('.graph-container').find('#fitness_graph').addClass('d-none');
+      self.closest('div.main-container').find('.graph-container').find('#nutrition_graph').addClass('d-none');
+      self.closest('div.main-container').find('.graph-container').find('#mental_graph').removeClass('d-none');
     }
     if(self.val() == 'nutrition'){
-      self.closest('div.col-sm-6').find('.graph-container').find('#fitness_graph').addClass('d-none');
-      self.closest('div.col-sm-6').find('.graph-container').find('#nutrition_graph').removeClass('d-none');
-      self.closest('div.col-sm-6').find('.graph-container').find('#mental_graph').addClass('d-none');
+      self.closest('div.main-container').find('.graph-container').find('#fitness_graph').addClass('d-none');
+      self.closest('div.main-container').find('.graph-container').find('#nutrition_graph').removeClass('d-none');
+      self.closest('div.main-container').find('.graph-container').find('#mental_graph').addClass('d-none');
     }
   });
 }

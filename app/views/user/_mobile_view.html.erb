@@ -2,21 +2,27 @@
 <div class="main-container">
   <div class="container-fluid text-center">
     <!--<div class="assessment-heading text-center font-weight-bold">Physical Fitness</div>-->
-    <div class="row mt-3">
+    <div class="row mt-3 ">
       <div class="trend-analysis-container mx-auto" style="width: 95%;">
         <div class="trend-analysis make-flex mt-3 mb-4">
           <div class="schedule">Trend Analysis</div>
           <div class="trend-select position-relative">
             <select class="analysis-dropdown">
-              <option value="">Physical</option>
-              <option value="">Mental</option>
-              <option value="">Nutrition</option>
+              <option value="physical">Physical</option>
+              <option value="mental">Mental</option>
+              <option value="nutrition">Nutrition</option>
             </select>
             <i class="fa fa-caret-down position-absolute"></i>
           </div>
         </div>
         <div class="graph-container">
           <div id="fitness_graph">
+
+          </div>
+          <div id="nutrition_graph" class="d-none">
+
+          </div>
+          <div id="mental_graph" class="d-none">
 
           </div>
         </div>
@@ -542,6 +548,10 @@
 <script>
   Highcharts.chart('fitness_graph', {
 
+    chart: {
+      type: 'column'
+    },
+
     title: {
       text: ''
     },
@@ -560,19 +570,105 @@
 
     series: [{
       name: 'Agility',
-      data: [10, 15, 14, 18, 19, 17]
+      data: [10, 20, 11, 12, 13, 15]
     }, {
       name: 'Balance',
-      data: [11, 16, 17, 17, 18, 10]
+      data: [11, 12, 11, 13, 14, 15]
     }, {
       name: 'Endurance',
-      data: [9, 8, 14, 11, 15, 16]
+      data: [9, 10, 11, 12, 13, 15]
     }, {
       name: 'Flexibility',
       data: [8, 9, 10, 10, 12, 15]
     }, {
       name: 'Speed',
       data: [8, 10, 11, 11, 14, 13]
+    }],
+
+  });
+</script>
+
+<script>
+  var set_dynamic_width = $('#fitness_graph').width();
+  Highcharts.chart('nutrition_graph', {
+
+    chart: {
+      type: 'column',
+      width: set_dynamic_width
+    },
+    title: {
+      text: ''
+    },
+
+    yAxis: {
+      title: {
+        text: 'Score'
+      }
+    },
+    xAxis: {
+      categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6']
+    },
+    legend: {
+      layout: 'horizontal'
+    },
+    series: [{
+      name: 'Calories',
+      data: [1000, 800, 900, 1100, 1200, 400]
+    }, {
+      name: 'Carbohydrates',
+      data: [1100, 1200, 1200, 1300, 1400, 1100]
+    }, {
+      name: 'Protein',
+      data: [900, 800, 700, 400, 500, 600]
+    }, {
+      name: 'Fibre',
+      data: [800, 900, 1000, 1000, 1200, 1500]
+    }, {
+      name: 'Vitamins and Minerals',
+      data: [800, 1000, 1100, 1100, 1400, 1300]
+    }],
+
+  });
+</script>
+
+<script>
+  var set_dynamic_width = $('#fitness_graph').width();
+  Highcharts.chart('mental_graph', {
+
+    chart: {
+      type: 'column',
+      width: set_dynamic_width
+    },
+    title: {
+      text: ''
+    },
+
+    yAxis: {
+      title: {
+        text: 'Score'
+      }
+    },
+    xAxis: {
+      categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6']
+    },
+    legend: {
+      layout: 'horizontal'
+    },
+    series: [{
+      name: 'Attention Control',
+      data: [11, 12, 13, 14, 15, 16]
+    }, {
+      name: 'Negative Energy Control',
+      data: [11, 10, 12, 12, 14, 15]
+    }, {
+      name: 'Positive Energy Control',
+      data: [10, 9, 11, 12, 13, 16]
+    }, {
+      name: 'Motivation Level',
+      data: [8, 9, 10, 11, 12, 13]
+    }, {
+      name: 'Attitude Control',
+      data: [8, 9, 10, 11, 12, 13]
     }],
 
   });
