@@ -1,24 +1,75 @@
 <body>
-  <div class="coach-view container">
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title">Update/Add athlete data</h4>
-            <p class="card-text"></p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
+<div class="coach-view container">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Update/Add athlete data</h4>
+          <p class="card-text"></p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+        <div class="form-container">
+          <form id="main-form" method="post" enctype="multipart/form-data" action="">
+            <div class="form-group">
+              <div class="input-headers color-orange font-weight-bold mb-3 mt-sm-5">Add Training Data</div>
+              <div class="mb-4">
+                <div class="student-analysis position-relative">
+                  <select class="analysis-dropdown select-player">
+                    <option label="Select Player"></option>
+                    <option value="physical">Akhil</option>
+                    <option value="mental">Suman</option>
+                    <option value="nutrition">Harsh</option>
+                  </select>
+                  <i class="fa fa-caret-down position-absolute"></i>
+                </div>
+              </div>
+              <div class="mb-4">
+                <div class="student-analysis position-relative">
+                  <select class="analysis-dropdown select-assessment">
+                    <option value="physical">Physical</option>
+                    <option value="mental">Mental</option>
+                    <option value="nutrition">Nutrition</option>
+                  </select>
+                  <i class="fa fa-caret-down position-absolute"></i>
+                </div>
+              </div>
+              <div class="mb-4">
+                <div class="student-analysis position-relative">
+                  <select class="analysis-dropdown select-sub-assessment">
+                    <option value="physical">Agility</option>
+                    <option value="mental">Endurance</option>
+                    <option value="nutrition">Strength</option>
+                  </select>
+                  <i class="fa fa-caret-down position-absolute"></i>
+                </div>
+              </div>
+              <div class="mb-4">
+                <div class="student-analysis position-relative">
+                  <input type="date" class="form-control b-bottom required-field" name="" fieldDisplayName="" id="input-date" aria-describedby="Date" placeholder="Date">
+                </div>
+              </div>
+              <div class="mb-4">
+                <div class="student-analysis position-relative">
+                  <input type="number" class="form-control b-bottom required-field" name="" fieldDisplayName="" id="input-score" aria-describedby="emailHelp" placeholder="Input Score">
+                </div>
+              </div>
+            </div>
+            <div class="text-center">
+              <button class="mx-auto send-message-button cursor-pointer">SEND MESSAGE</button>
+            </div>
+          </form>
         </div>
       </div>
-      <div class="col-sm-6">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title">Special title treatment</h4>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">View athlete data</h4>
+          <p class="card-text"></p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
     </div>
   </div>
+</div>
 </body>

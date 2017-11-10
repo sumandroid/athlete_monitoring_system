@@ -1,0 +1,30 @@
+.position-relative{
+  position: relative;
+}
+
+.position-absolute{
+  position: absolute;
+}
+
+.student-analysis{
+
+}
+
+.analysis-dropdown {
+  -webkit-appearance: none;
+  width: 113px;
+  background-color: transparent;
+  color: #95989A;
+  padding-left: 8px;
+  font-weight: 600;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.analysis-dropdown ~ i {
+  color: #95989A;
+  position: absolute;
+  right: 12px;
+  top: 7px;
+  z-index: -1;
+}
