@@ -14,7 +14,7 @@
               <div class="input-headers color-orange font-weight-bold mb-3 mt-sm-5">Add Training Data</div>
               <div class="mb-4">
                 <div class="student-analysis position-relative">
-                  <select class="analysis-dropdown select-player">
+                  <select class="analysis-dropdown select-player student_select_dropdown">
                     <option label="Select Player"></option>
                     <option value="physical">Akhil</option>
                     <option value="mental">Suman</option>
@@ -25,7 +25,7 @@
               </div>
               <div class="mb-4">
                 <div class="student-analysis position-relative">
-                  <select class="analysis-dropdown select-assessment">
+                  <select class="analysis-dropdown select-assessment coach_assessment_select_dropdown">
                     <option value="physical">Physical</option>
                     <option value="mental">Mental</option>
                     <option value="nutrition">Nutrition</option>
@@ -35,10 +35,12 @@
               </div>
               <div class="mb-4">
                 <div class="student-analysis position-relative">
-                  <select class="analysis-dropdown select-sub-assessment">
-                    <option value="physical">Agility</option>
-                    <option value="mental">Endurance</option>
-                    <option value="nutrition">Strength</option>
+                  <select class="analysis-dropdown select-sub-assessment coach_attribute_select_dropdown">
+                    <option value="agility" selected>Agility</option>
+                    <option value="balance">Balance</option>
+                    <option value="endurance">Endurance</option>
+                    <option value="flexibility">Flexibility</option>
+                    <option value="speed">Speed</option>
                   </select>
                   <i class="fa fa-caret-down position-absolute"></i>
                 </div>
