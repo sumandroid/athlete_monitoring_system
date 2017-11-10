@@ -16,3 +16,92 @@
     }
   });
 }
+
+/************ Card animation script ************/
+
+$(function () {
+  var card_height = $('.card').height();
+  $('#view_data_form').on('click', function () {
+    var self = $(this);
+    var container_animating = self.closest('.animate_container');
+    var add_data_card = $('.add_data_card')
+    var view_data_card = $('.view_data_card');
+    if (container_animating.hasClass('make-flex')) {
+      container_animating.removeClass('make-flex');
+      self.closest('.add_data_card').removeClass('col-sm-6');
+      $('.view_data_card').removeClass('col-sm-6');
+      $('.view_data_card').addClass('position-absolute');
+      view_data_card.css({
+        'position': 'absolute',
+        'top': '0',
+        'right': '0'
+      });
+      container_animating.css({
+        'position': 'relative'
+      });
+      add_data_card.css({
+        'position': 'absolute'
+      });
+      $('.add_data_card .data-card').css({
+        'border': 'none'
+      });
+      $('.add_data_card').css({
+        'border': '1px solid rgba(0,0,0,.125)'
+      });
+      add_data_card.animate({
+        'top': card_height + 15,
+        'width': '100%',
+        'height': '560px'
+      });
+      $('.form-container').removeClass('d-none');
+      view_data_card.animate({
+        'width': '100%'
+      });
+      $('.score-input-parent').css({
+        'justify-content' : 'space-around'
+      });
+      $('.score-input-parent .score-input').css({
+        'width' : '180px'
+      });
+      view_data_card.addClass('view-shrink');
+    }
+  });
+
+  $('#view_data_athlete').on('click', function () {
+    var self = $(this);
+    var container_animating = self.closest('.animate_container');
+    var add_data_card = $('.add_data_card')
+    var view_data_card = $('.view_data_card');
+    if ($('.view_data_card').hasClass('view-shrink')) {
+      view_data_card.removeClass('view-shrink');
+      view_data_card.css({
+        'width': 'unset'
+      });
+      $('.form-container').addClass('d-none')
+      add_data_card.animate({
+        'top': 0,
+        'width': '100%',
+        'height': card_height
+      });
+
+      $('.add_data_card .data-card').css({
+        'border': '1px solid rgba(0,0,0,.125)'
+      });
+
+      $('.view_data_card .data-card').css({
+        'border': 'none'
+      });
+
+      view_data_card.css({
+        'border': '1px solid rgba(0,0,0,.125)'
+      });
+
+      view_data_card.css({
+        'top': card_height + 15,
+        'width': '100%',
+        'height': '630px'
+      });
+      add_data_card.addClass('view-shrink');
+    }
+  })
+});

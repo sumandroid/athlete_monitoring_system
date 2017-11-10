@@ -1,20 +1,20 @@
 <body>
 <div class="coach-view container">
-  <div class="row">
-    <div class="col-sm-6">
-      <div class="card">
+  <div class="animate_container make-flex">
+    <div class="add_data_card col-sm-6">
+      <div class="card data-card">
         <div class="card-body">
           <h4 class="card-title">Update/Add athlete data</h4>
           <p class="card-text"></p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <div class="btn btn-primary" id="view_data_form">Go somewhere</div>
         </div>
-        <div class="form-container">
+        <div class="form-container d-none">
           <form id="main-form" method="post" enctype="multipart/form-data" action="">
             <div class="form-group">
               <div class="input-headers color-orange font-weight-bold mb-3 mt-sm-5">Add Training Data</div>
               <div class="mb-4">
                 <div class="student-analysis position-relative">
-                  <select class="analysis-dropdown select-player student_select_dropdown">
+                  <select class="analysis-dropdown select-player">
                     <option label="Select Player"></option>
                     <option value="physical">Akhil</option>
                     <option value="mental">Suman</option>
@@ -35,14 +35,38 @@
               </div>
               <div class="mb-4">
                 <div class="student-analysis position-relative">
-                  <select class="analysis-dropdown select-sub-assessment coach_attribute_select_dropdown">
-                    <option value="agility" selected>Agility</option>
-                    <option value="balance">Balance</option>
-                    <option value="endurance">Endurance</option>
-                    <option value="flexibility">Flexibility</option>
-                    <option value="speed">Speed</option>
-                  </select>
-                  <i class="fa fa-caret-down position-absolute"></i>
+                  <label>Physical Scores</label>
+                  <div class="make-flex score-input-parent">
+                    <input type="number" class="form-control b-bottom required-field score-input" name="" fieldDisplayName="" id="" aria-describedby="" placeholder="Agility">
+                    <input type="number" class="form-control b-bottom required-field score-input" name="" fieldDisplayName="" id="" aria-describedby="" placeholder="Balance">
+                    <input type="number" class="form-control b-bottom required-field score-input" name="" fieldDisplayName="" id="" aria-describedby="" placeholder="Endurance">
+                    <input type="number" class="form-control b-bottom required-field score-input" name="" fieldDisplayName="" id="" aria-describedby="" placeholder="Flexibility">
+                    <input type="number" class="form-control b-bottom required-field score-input" name="" fieldDisplayName="" id="" aria-describedby="" placeholder="Speed">
+                  </div>
+                </div>
+              </div>
+              <div class="mb-4">
+                <div class="student-analysis position-relative">
+                  <label>Mental Scores</label>
+                  <div class="make-flex score-input-parent">
+                    <input type="number" class="form-control b-bottom required-field score-input" name="" fieldDisplayName="" id="" aria-describedby="" placeholder="Attention Control">
+                    <input type="number" class="form-control b-bottom required-field score-input" name="" fieldDisplayName="" id="" aria-describedby="" placeholder="Negative Energy Control">
+                    <input type="number" class="form-control b-bottom required-field score-input" name="" fieldDisplayName="" id="" aria-describedby="" placeholder="Positive Energy Control">
+                    <input type="number" class="form-control b-bottom required-field score-input" name="" fieldDisplayName="" id="" aria-describedby="" placeholder="Motivation Level">
+                    <input type="number" class="form-control b-bottom required-field score-input" name="" fieldDisplayName="" id="" aria-describedby="" placeholder="Attitude Control">
+                  </div>
+                </div>
+              </div>
+              <div class="mb-4">
+                <div class="student-analysis position-relative">
+                  <label>Nutrition Scores</label>
+                  <div class="make-flex score-input-parent">
+                    <input type="number" class="form-control b-bottom required-field score-input" name="" fieldDisplayName="" id="" aria-describedby="" placeholder="Calories">
+                    <input type="number" class="form-control b-bottom required-field score-input" name="" fieldDisplayName="" id="" aria-describedby="" placeholder="Carbohydrates">
+                    <input type="number" class="form-control b-bottom required-field score-input" name="" fieldDisplayName="" id="" aria-describedby="" placeholder="Protein">
+                    <input type="number" class="form-control b-bottom required-field score-input" name="" fieldDisplayName="" id="" aria-describedby="" placeholder="Fibre">
+                    <input type="number" class="form-control b-bottom required-field score-input" name="" fieldDisplayName="" id="" aria-describedby="" placeholder="Vitamins & Minerals">
+                  </div>
                 </div>
               </div>
               <div class="mb-4">
@@ -63,12 +87,12 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-6">
-      <div class="card">
+    <div class="view_data_card col-sm-6">
+      <div class="card data-card">
         <div class="card-body">
           <h4 class="card-title">View athlete data</h4>
           <p class="card-text"></p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <div class="btn btn-primary" id="view_data_athlete">Go somewhere</div>
         </div>
       </div>
     </div>
