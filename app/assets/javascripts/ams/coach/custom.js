@@ -2,17 +2,22 @@
 {
   $(document).on('change', 'select.coach_assessment_select_dropdown', function () {
     var self = $(this);
-    if(self.val() == 'physical'){
-      self.closest('form').find('select.coach_attribute_select_dropdown').html('');
-      self.closest('form').find('select.coach_attribute_select_dropdown').html('<option value="agility" selected>Agility</option>\n' + '<option value="balance">Balance</option>\n' +'<option value="endurance">Endurance</option>\n' +'<option value="flexibility">Flexibility</option>\n' +'<option value="speed">Speed</option>');
+    var form = self.closest('form');
+    if (self.val() == 'physical') {
+      form.find('div.physical_aspects_div').removeClass('d-none');
+      form.find('div.mental_aspects_div').addClass('d-none');
+      form.find('div.nutrition_aspects_div').addClass('d-none');
+
     }
-    if(self.val() == 'mental'){
-      self.closest('form').find('select.coach_attribute_select_dropdown').html('');
-      self.closest('form').find('select.coach_attribute_select_dropdown').html('<option value="attention_control" selected>Attention Control</option>\n' + '<option value="negative_energy_control">Negative Energy Control</option>\n' +'<option value="Positive Energy Control">Positive Energy Control</option>\n' +'<option value="motivation_level">Motivation Level</option>\n' +'<option value="attitude_control">Attitude Control</option>');
+    if (self.val() == 'mental') {
+      form.find('div.physical_aspects_div').addClass('d-none');
+      form.find('div.mental_aspects_div').removeClass('d-none');
+      form.find('div.nutrition_aspects_div').addClass('d-none');
     }
-    if(self.val() == 'nutrition'){
-      self.closest('form').find('select.coach_attribute_select_dropdown').html('');
-      self.closest('form').find('select.coach_attribute_select_dropdown').html('<option value="calories" selected>Calories</option>\n' + '<option value="carbohydrates">Carbohydrates</option>\n' +'<option value="protein">Protein</option>\n' +'<option value="fibre">Fibre</option>\n' +'<option value="vitamins_and_minerals">Vitamins and Minerals</option>');
+    if (self.val() == 'nutrition') {
+      form.find('div.physical_aspects_div').addClass('d-none');
+      form.find('div.mental_aspects_div').addClass('d-none');
+      form.find('div.nutrition_aspects_div').removeClass('d-none');
     }
   });
 }
@@ -58,10 +63,10 @@ $(function () {
         'width': '100%'
       });
       $('.score-input-parent').css({
-        'justify-content' : 'space-around'
+        'justify-content': 'space-around'
       });
       $('.score-input-parent .score-input').css({
-        'width' : '180px'
+        'width': '180px'
       });
       view_data_card.addClass('view-shrink');
     }
@@ -105,3 +110,52 @@ $(function () {
     }
   })
 });
+
+
+/**************** user data form submit form **************/
+{
+  $(document).on('click', '.user_data_submit_button', function (e) {
+    e.preventDefault();
+    var form = $(this).closest('form');
+    var user_id = form.find('.coach_student_select_dropdown').val();
+    var assessment = form.find('.coach_assessment_select_dropdown').val();
+    var assessment_date = form.find('input[name="assessment_date"]').val();
+    if (assessment == 'physical') {
+      var active_div = form.find('div.physical_aspects_div');
+    }
+    if (assessment == 'mental') {
+      var active_div = form.find('div.mental_aspects_div');
+    }
+    if (assessment == 'nutrition') {
+      var active_div = form.find('div.nutrition_aspects_div');
+    }
+    var aspect_scores = [];
+    active_div.find('input[type="number"]').each(function () {
+      var self = $(this);
+      var name = self.attr('name');
+      var score_obj = {};
+      score_obj[name] = self.val();
+      aspect_scores.push(score_obj);
+    });
+    $.ajax({
+      url: form.attr('action'),
+      type: 'post',
+      dataType: 'json',
+      data: {user_id: user_id, assessment: assessment, aspect_scores: aspect_scores, assessment_date: assessment_date},
+      error: function () {
+        alert('There is some error, please try again later');
+      },
+      success: function (result) {
+        if (result.status == 'success') {
+          alert(result.msg);
+          window.location.href = result.url;
+        }
+        else {
+          alert(result.msg);
+          window.location.href = result.url;
+        }
+
+      }
+    })
+  });
+}

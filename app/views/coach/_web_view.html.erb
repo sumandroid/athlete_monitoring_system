@@ -9,16 +9,15 @@
           <div class="btn btn-primary" id="view_data_form">Go somewhere</div>
         </div>
         <div class="form-container d-none">
-          <form id="main-form" method="post" enctype="multipart/form-data" action="">
+          <form id="main-form" method="post" action="<%= coach_submit_user_score_path %>">
             <div class="form-group">
               <div class="input-headers color-orange font-weight-bold mb-3 mt-sm-5">Add Training Data</div>
               <div class="mb-4">
                 <div class="student-analysis position-relative">
-                  <select class="analysis-dropdown select-player">
-                    <option label="Select Player"></option>
-                    <option value="physical">Akhil</option>
-                    <option value="mental">Suman</option>
-                    <option value="nutrition">Harsh</option>
+                  <select class="analysis-dropdown select-player coach_student_select_dropdown" name="user_id">
+                    <% users.each {|user| %>
+                        <option value="<%= user.id %>"><%= user.name.titleize%></option>
+                    <% } %>
                   </select>
                   <i class="fa fa-caret-down position-absolute"></i>
                 </div>
@@ -26,62 +25,57 @@
               <div class="mb-4">
                 <div class="student-analysis position-relative">
                   <select class="analysis-dropdown select-assessment coach_assessment_select_dropdown">
-                    <option value="physical">Physical</option>
+                    <option value="physical" selected>Physical</option>
                     <option value="mental">Mental</option>
                     <option value="nutrition">Nutrition</option>
                   </select>
                   <i class="fa fa-caret-down position-absolute"></i>
                 </div>
               </div>
-              <div class="mb-4">
+              <div class="mb-4 physical_aspects_div">
                 <div class="student-analysis position-relative">
-                  <label>Physical Scores</label>
+                  <label>Scores</label>
                   <div class="make-flex score-input-parent">
-                    <input type="number" class="form-control b-bottom required-field score-input" name="" fieldDisplayName="" id="" aria-describedby="" placeholder="Agility">
-                    <input type="number" class="form-control b-bottom required-field score-input" name="" fieldDisplayName="" id="" aria-describedby="" placeholder="Balance">
-                    <input type="number" class="form-control b-bottom required-field score-input" name="" fieldDisplayName="" id="" aria-describedby="" placeholder="Endurance">
-                    <input type="number" class="form-control b-bottom required-field score-input" name="" fieldDisplayName="" id="" aria-describedby="" placeholder="Flexibility">
-                    <input type="number" class="form-control b-bottom required-field score-input" name="" fieldDisplayName="" id="" aria-describedby="" placeholder="Speed">
+                    <input type="number" class="form-control b-bottom required-field score-input" name="agility" fieldDisplayName="" id="" aria-describedby="" placeholder="Agility" required>
+                    <input type="number" class="form-control b-bottom required-field score-input" name="balance" fieldDisplayName="" id="" aria-describedby="" placeholder="Balance" required>
+                    <input type="number" class="form-control b-bottom required-field score-input" name="endurance" fieldDisplayName="" id="" aria-describedby="" placeholder="Endurance" required>
+                    <input type="number" class="form-control b-bottom required-field score-input" name="flexibility" fieldDisplayName="" id="" aria-describedby="" placeholder="Flexibility" required>
+                    <input type="number" class="form-control b-bottom required-field score-input" name="speed" fieldDisplayName="" id="" aria-describedby="" placeholder="Speed" required>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-4 mental_aspects_div d-none">
+                <div class="student-analysis position-relative">
+                  <label>Scores</label>
+                  <div class="make-flex score-input-parent">
+                    <input type="number" class="form-control b-bottom required-field score-input" name="attention_control" fieldDisplayName="" id="" aria-describedby="" placeholder="Attention Control" required>
+                    <input type="number" class="form-control b-bottom required-field score-input" name="negative_energy_control" fieldDisplayName="" id="" aria-describedby="" placeholder="Negative Energy Control" required>
+                    <input type="number" class="form-control b-bottom required-field score-input" name="positive_energy_control" fieldDisplayName="" id="" aria-describedby="" placeholder="Positive Energy Control" required>
+                    <input type="number" class="form-control b-bottom required-field score-input" name="motivation_level" fieldDisplayName="" id="" aria-describedby="" placeholder="Motivation Level" required>
+                    <input type="number" class="form-control b-bottom required-field score-input" name="attitude_control" fieldDisplayName="" id="" aria-describedby="" placeholder="Attitude Control" required>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-4 nutrition_aspects_div d-none">
+                <div class="student-analysis position-relative">
+                  <label>Scores</label>
+                  <div class="make-flex score-input-parent">
+                    <input type="number" class="form-control b-bottom required-field score-input" name="calories" fieldDisplayName="" id="" aria-describedby="" placeholder="Calories" required>
+                    <input type="number" class="form-control b-bottom required-field score-input" name="carbohydrates" fieldDisplayName="" id="" aria-describedby="" placeholder="Carbohydrates" required>
+                    <input type="number" class="form-control b-bottom required-field score-input" name="protein" fieldDisplayName="" id="" aria-describedby="" placeholder="Protein" required>
+                    <input type="number" class="form-control b-bottom required-field score-input" name="fibre" fieldDisplayName="" id="" aria-describedby="" placeholder="Fibre" required>
+                    <input type="number" class="form-control b-bottom required-field score-input" name="vitamins_and_minerals" fieldDisplayName="" id="" aria-describedby="" placeholder="Vitamins & Minerals" required>
                   </div>
                 </div>
               </div>
               <div class="mb-4">
                 <div class="student-analysis position-relative">
-                  <label>Mental Scores</label>
-                  <div class="make-flex score-input-parent">
-                    <input type="number" class="form-control b-bottom required-field score-input" name="" fieldDisplayName="" id="" aria-describedby="" placeholder="Attention Control">
-                    <input type="number" class="form-control b-bottom required-field score-input" name="" fieldDisplayName="" id="" aria-describedby="" placeholder="Negative Energy Control">
-                    <input type="number" class="form-control b-bottom required-field score-input" name="" fieldDisplayName="" id="" aria-describedby="" placeholder="Positive Energy Control">
-                    <input type="number" class="form-control b-bottom required-field score-input" name="" fieldDisplayName="" id="" aria-describedby="" placeholder="Motivation Level">
-                    <input type="number" class="form-control b-bottom required-field score-input" name="" fieldDisplayName="" id="" aria-describedby="" placeholder="Attitude Control">
-                  </div>
-                </div>
-              </div>
-              <div class="mb-4">
-                <div class="student-analysis position-relative">
-                  <label>Nutrition Scores</label>
-                  <div class="make-flex score-input-parent">
-                    <input type="number" class="form-control b-bottom required-field score-input" name="" fieldDisplayName="" id="" aria-describedby="" placeholder="Calories">
-                    <input type="number" class="form-control b-bottom required-field score-input" name="" fieldDisplayName="" id="" aria-describedby="" placeholder="Carbohydrates">
-                    <input type="number" class="form-control b-bottom required-field score-input" name="" fieldDisplayName="" id="" aria-describedby="" placeholder="Protein">
-                    <input type="number" class="form-control b-bottom required-field score-input" name="" fieldDisplayName="" id="" aria-describedby="" placeholder="Fibre">
-                    <input type="number" class="form-control b-bottom required-field score-input" name="" fieldDisplayName="" id="" aria-describedby="" placeholder="Vitamins & Minerals">
-                  </div>
-                </div>
-              </div>
-              <div class="mb-4">
-                <div class="student-analysis position-relative">
-                  <input type="date" class="form-control b-bottom required-field" name="" fieldDisplayName="" id="input-date" aria-describedby="Date" placeholder="Date">
-                </div>
-              </div>
-              <div class="mb-4">
-                <div class="student-analysis position-relative">
-                  <input type="number" class="form-control b-bottom required-field" name="" fieldDisplayName="" id="input-score" aria-describedby="emailHelp" placeholder="Input Score">
+                  <input type="date" class="form-control b-bottom required-field" name="assessment_date" fieldDisplayName="" id="input-date" aria-describedby="Date" placeholder="Date" required>
                 </div>
               </div>
             </div>
             <div class="text-center">
-              <button class="mx-auto send-message-button cursor-pointer">SEND MESSAGE</button>
+              <button type="submit" class="mx-auto send-message-button cursor-pointer user_data_submit_button">SUBMIT</button>
             </div>
           </form>
         </div>

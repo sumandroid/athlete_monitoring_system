@@ -11,4 +11,5 @@ Rails.application.routes.draw do
 
   #coach_routes
   match 'coach/dashboard/(:device)'         => 'coach#dashboard',               :via => [:get],     :as => :coach_dashboard
+  match 'coach/submit_user_score'           => 'coach#submit_user_score',       :via => [:post],    :as => :coach_submit_user_score
 end

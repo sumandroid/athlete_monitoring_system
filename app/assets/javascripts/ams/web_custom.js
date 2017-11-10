@@ -653,6 +653,16 @@ $(function () {
   });
 });
 
+/******** login form radio button script ******/
+{
+  $(document).on('click', '.login_form_radio', function () {
+    var self = $(this);
+    var form = self.closest('form');
+    form.find('input[type="radio"]').prop('checked', false);
+    self.prop('checked', true);
+  });
+}
+
 
 
 
