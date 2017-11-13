@@ -696,6 +696,8 @@
   </div>
 </div>
 </body>
+<% current_year = Time.current.year %>
+<% current_week_of_the_year = Date.today.strftime("%W").to_i %>
 <script>
   Highcharts.chart('fitness_graph', {
 
@@ -713,39 +715,36 @@
       }
     },
     xAxis: {
-      categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6']
+      categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6'],
     },
     legend: {
       layout: 'horizontal'
     },
+    series: [
+      <% user_physical_score_map.keys.each do |key|%>
+      {
+        name: '<%= key %>',
+        data: [
+          <% 6.downto(1) {|indx|%>
+          <% score_arr = user_physical_score_map[key].collect { |m| m.score if DateTime.parse(m.assessment_date.to_s).strftime("%W").to_i.eql? (current_week_of_the_year - indx)  }.compact if user_physical_score_map[key].present? and user_physical_score_map.present? %>
+          <%= (score_arr.size.eql? 0) ? 0 : (score_arr.inject{ |sum, el| sum + el }.to_f / score_arr.size).round(1) %>,
+          <% } %>
+        ]
+      },
+      <% end if user_physical_score_map.present? %>
+    ],
 
-    series: [{
-      name: 'Agility',
-      data: [10, 20, 11, 12, 13, 15]
-    }, {
-      name: 'Balance',
-      data: [11, 12, 11, 13, 14, 15]
-    }, {
-      name: 'Endurance',
-      data: [9, 10, 11, 12, 13, 15]
-    }, {
-      name: 'Flexibility',
-      data: [8, 9, 10, 10, 12, 15]
-    }, {
-      name: 'Speed',
-      data: [8, 10, 11, 11, 14, 13]
-    }],
 
   });
 </script>
 
 <script>
-  var set_dynamic_width = $('#fitness_graph').width();
+  var trends_graph_width = $('#fitness_graph').width();
   Highcharts.chart('nutrition_graph', {
 
     chart: {
       type: 'column',
-      width: set_dynamic_width
+      width: trends_graph_width
     },
     title: {
       text: ''
@@ -762,33 +761,30 @@
     legend: {
       layout: 'horizontal'
     },
-    series: [{
-      name: 'Calories',
-      data: [1000, 800, 900, 1100, 1200, 400]
-    }, {
-      name: 'Carbohydrates',
-      data: [1100, 1200, 1200, 1300, 1400, 1100]
-    }, {
-      name: 'Protein',
-      data: [900, 800, 700, 400, 500, 600]
-    }, {
-      name: 'Fibre',
-      data: [800, 900, 1000, 1000, 1200, 1500]
-    }, {
-      name: 'Vitamins and Minerals',
-      data: [800, 1000, 1100, 1100, 1400, 1300]
-    }],
+    series: [
+      <% user_nutrition_score_map.keys.each do |key|%>
+      {
+        name: '<%= key %>',
+        data: [
+          <% 6.downto(1) {|indx|%>
+          <% score_arr = user_nutrition_score_map[key].collect { |m| m.score if DateTime.parse(m.assessment_date.to_s).strftime("%W").to_i.eql? (current_week_of_the_year - indx)  }.compact if user_nutrition_score_map[key].present? and user_nutrition_score_map.present? %>
+          <%= (score_arr.size.eql? 0) ? 0 : (score_arr.inject{ |sum, el| sum + el }.to_f / score_arr.size).round(1) %>,
+          <% } %>
+        ]
+      },
+      <% end if user_nutrition_score_map.present? %>
+    ],
 
   });
 </script>
 
 <script>
-  var set_dynamic_width = $('#fitness_graph').width();
+  var trends_graph_width = $('#fitness_graph').width();
   Highcharts.chart('mental_graph', {
 
     chart: {
       type: 'column',
-      width: set_dynamic_width
+      width: trends_graph_width
     },
     title: {
       text: ''
@@ -805,33 +801,28 @@
     legend: {
       layout: 'horizontal'
     },
-    series: [{
-      name: 'Attention Control',
-      data: [11, 12, 13, 14, 15, 16]
-    }, {
-      name: 'Negative Energy Control',
-      data: [11, 10, 12, 12, 14, 15]
-    }, {
-      name: 'Positive Energy Control',
-      data: [10, 9, 11, 12, 13, 16]
-    }, {
-      name: 'Motivation Level',
-      data: [8, 9, 10, 11, 12, 13]
-    }, {
-      name: 'Attitude Control',
-      data: [8, 9, 10, 11, 12, 13]
-    }],
+    series: [
+      <% user_mental_score_map.keys.each do |key|%>
+      {
+        name: '<%= key %>',
+        data: [
+          <% 6.downto(1) {|indx|%>
+          <% score_arr = user_mental_score_map[key].collect { |m| m.score if DateTime.parse(m.assessment_date.to_s).strftime("%W").to_i.eql? (current_week_of_the_year - indx)  }.compact if user_mental_score_map[key].present? and user_mental_score_map.present? %>
+          <%= (score_arr.size.eql? 0) ? 0 : (score_arr.inject{ |sum, el| sum + el }.to_f / score_arr.size).round(1) %>,
+          <% } %>
+        ]
+      },
+      <% end if user_mental_score_map.present? %>
+    ],
 
   });
 </script>
 
 <script>
-  var comparision_graph_width = $('#fitness_graph').width();
   Highcharts.chart('physical_comparison_graph', {
 
     chart: {
-      type: 'bar',
-      width: comparision_graph_width
+      type: 'bar'
     },
     title: {
       text: 'Fitness Benchmark'
@@ -843,11 +834,17 @@
       }
     },
     xAxis: {
-      categories: ['Agility', 'Balance', 'Endurance', 'Flexibility', 'Speed']
+      categories: <%= sanitize user_physical_score_map.keys.inspect %>
     },
     series: [{
       name: 'You',
-      data: [11, 12, 13, 12, 10]
+
+      data: [<% user_physical_score_map.keys.each do |key| %>
+        <% score_arr = user_physical_score_map[key].collect{|m| m.score}.compact %>
+        <%= (score_arr.size.eql? 0) ? 0 : (score_arr.inject{ |sum, el| sum + el }.to_f / score_arr.size).round(1) %>,
+        <% end%>
+      ]
+
     },
       {
         name: 'Your Peers',

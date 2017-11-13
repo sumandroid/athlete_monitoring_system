@@ -1,2 +1,2 @@
 <%= render(:partial => 'web_view' , :locals => {:users => @users}) if @web_view%>
-<%= render(:partial => 'mobile_view') if @mob_view%>
+<%= render(:partial => 'mobile_view', :locals => {:users => @users}) if @mob_view%>

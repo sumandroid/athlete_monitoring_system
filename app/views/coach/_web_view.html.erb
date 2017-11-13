@@ -6,7 +6,7 @@
         <div class="card-body">
           <h4 class="card-title">Update/Add athlete data</h4>
           <p class="card-text"></p>
-          <div class="btn btn-primary view_data_form">Go somewhere</div>
+          <div class="btn btn-primary view_data_form">Add Data</div>
         </div>
         <div class="form-container d-none">
           <form id="main-form" method="post" action="<%= coach_submit_user_score_path %>">
@@ -24,7 +24,7 @@
                   <i class="fa fa-caret-down position-absolute"></i>
                   <select class="analysis-drop-down select-player coach_student_select_dropdown" name="user_id">
                     <% users.each {|user| %>
-                        <option value="<%= user.id %>"><%= user.name.titleize%></option>
+                        <option value="<%= user.id %>"><%= user.name.titleize %></option>
                     <% } %>
                   </select>
                 </div>
@@ -89,23 +89,21 @@
         <div class="card-body">
           <h4 class="card-title">View athlete data</h4>
           <p class="card-text"></p>
-          <div class="btn btn-primary view_data_athlete">Go somewhere</div>
+          <div class="btn btn-primary view_data_athlete">Select Athlete</div>
         </div>
         <div class="athlete-list-container d-none">
           <table>
             <tbody>
-            <tr class="athlete-displayed athlete1">
-              <td class="athlete-name">Nikhil Jha</td>
-              <td class="athlete-img">
-                <img src="/avatar1.png">
-              </td>
-            </tr>
-            <tr class="athlete-displayed athlete2">
-              <td class="athlete-name">Suman Saurabh</td>
-              <td class="athlete-img">
-                <img src="/avatar2.png">
-              </td>
-            </tr>
+            <% users.each do |user| %>
+                <tr class="athlete-displayed athlete1">
+                  <% if user.user_type.eql? 0 %>
+                      <td class="athlete-name"><a target="_blank" href="<%= user_dashboard_path(:device => 'web', :user_id => user.id)%>"><%= user.name.titleize if user.name.present? %></a></td>
+                      <td class="athlete-img">
+                        <img src="/avatar1.png">
+                      </td>
+                  <% end %>
+                </tr>
+            <% end %>
             </tbody>
           </table>
         </div>
