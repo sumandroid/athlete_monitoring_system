@@ -10,7 +10,7 @@ class CoachController < ApplicationController
   def submit_user_score
     raise 'user id is missing' unless params[:user_id].present?
     user_score_submitted = UserScore.submit_user_score(params)
-    render :json => {:status => 'success', :msg => 'user score submitted successfully', :url => coach_dashboard_path(:device => 'web')} if user_score_submitted
-    render :json => {:status => 'error', :msg => 'There is some error while submitting the user score', :url => coach_dashboard_path(:device => 'web')} if not user_score_submitted
+    render :json => {:status => 'success', :msg => 'user score submitted successfully', :url => coach_dashboard_path(:device => params[:device])} if user_score_submitted
+    render :json => {:status => 'error', :msg => 'There is some error while submitting the user score', :url => coach_dashboard_path(:device => params[:device])} if not user_score_submitted
   end
 end

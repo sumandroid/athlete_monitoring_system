@@ -268,7 +268,7 @@ $(function () {
       url: form.attr('action'),
       type: 'post',
       dataType: 'json',
-      data: {user_id: user_id, assessment: assessment, aspect_scores: aspect_scores, assessment_date: assessment_date},
+      data: {user_id: user_id, assessment: assessment, aspect_scores: aspect_scores, assessment_date: assessment_date, device: form.find('#ams_device').val()},
       error: function () {
         alert('There is some error, please try again later');
       },

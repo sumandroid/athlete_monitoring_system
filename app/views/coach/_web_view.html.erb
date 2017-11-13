@@ -80,6 +80,7 @@
             <div class="text-center submit-button-container">
               <button type="submit" class="mx-auto send-message-button cursor-pointer user_data_submit_button">SUBMIT</button>
             </div>
+            <input type="hidden" name="device" id="ams_device">
           </form>
         </div>
       </div>
@@ -112,3 +113,12 @@
   </div>
 </div>
 </body>
+<script>
+  $(function () {
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      $('#ams_device').val('mobile');
+    } else {
+      $('#ams_device').val('web');
+    }
+  });
+</script>
