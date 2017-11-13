@@ -1,6 +1,12 @@
 header{
-  background-color: #222;
+  background-color: #4d4d4d;
   height:70px;
+}
+
+header #sqp-logo{
+  background-color: white;
+  width: 80px;
+  height: 50px;
 }
 
 header .app-name{

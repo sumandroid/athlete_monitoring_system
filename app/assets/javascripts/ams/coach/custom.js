@@ -166,8 +166,12 @@ $(function () {
         'border-bottom': '1px solid rgba(0,0,0,.325)'
       });
 
+      $('.view_data_card').css({
+        'border': 'none'
+      });
+
       $('.view_data_card .data-card').css({
-        'border-color': 'none'
+        'border': '1px solid rgba(0,0,0,.325)'
       });
 
       // view_data_card.css({
@@ -199,13 +203,19 @@ $(function () {
     var view_data_card = $('.view_data_card');
     if ($('.add_data_card').hasClass('view-shrink')) {
       add_data_card.removeClass('view-shrink');
-      view_data_card.animate({
-        'height': card_height
-      }, 400, function () {
-        view_data_card.animate({
-          'top': 0
-        })
+      $('.athlete-list-container').animate({
+        'opacity': 0
       });
+      setTimeout(function () {
+        view_data_card.animate({
+          'height': card_height
+        }, 400, function () {
+          view_data_card.animate({
+            'top': 0
+          });
+          $('.athlete-list-container').addClass('d-none');
+        });
+      }, 400);
 
       $('.view_data_card .data-card').css({
         'border-bottom': '1px solid rgba(0,0,0,.325)'
