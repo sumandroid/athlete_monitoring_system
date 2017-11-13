@@ -132,6 +132,8 @@ $(function () {
           });
           add_data_card.animate({
             'width': '100%'
+          },400, function () {
+            $('.athlete-list-container').removeClass('d-none');
           });
         });
       }, 400);
