@@ -244,45 +244,66 @@ $(function () {
   $(document).on('click', '.user_data_submit_button', function (e) {
     e.preventDefault();
     var form = $(this).closest('form');
-    var user_id = form.find('.coach_student_select_dropdown').val();
-    var assessment = form.find('.coach_assessment_select_dropdown').val();
-    var assessment_date = form.find('input[name="assessment_date"]').val();
-    if (assessment == 'physical') {
-      var active_div = form.find('div.physical_aspects_div');
-    }
-    if (assessment == 'mental') {
-      var active_div = form.find('div.mental_aspects_div');
-    }
-    if (assessment == 'nutrition') {
-      var active_div = form.find('div.nutrition_aspects_div');
-    }
-    var aspect_scores = [];
-    active_div.find('input[type="number"]').each(function () {
-      var self = $(this);
-      var name = self.attr('name');
-      var score_obj = {};
-      score_obj[name] = self.val();
-      aspect_scores.push(score_obj);
-    });
-    $.ajax({
-      url: form.attr('action'),
-      type: 'post',
-      dataType: 'json',
-      data: {user_id: user_id, assessment: assessment, aspect_scores: aspect_scores, assessment_date: assessment_date, device: form.find('#ams_device').val()},
-      error: function () {
-        alert('There is some error, please try again later');
-      },
-      success: function (result) {
-        if (result.status == 'success') {
-          alert(result.msg);
-          window.location.href = result.url;
-        }
-        else {
-          alert(result.msg);
-          window.location.href = result.url;
-        }
-
+    var error = 0;
+    var error_message = checkRequiredFields(form);
+    if(error_message != ''){
+      alert(error_message);
+    }else{
+      var user_id = form.find('.coach_student_select_dropdown').val();
+      var assessment = form.find('.coach_assessment_select_dropdown').val();
+      var assessment_date = form.find('input[name="assessment_date"]').val();
+      if (assessment == 'physical') {
+        var active_div = form.find('div.physical_aspects_div');
       }
-    })
+      if (assessment == 'mental') {
+        var active_div = form.find('div.mental_aspects_div');
+      }
+      if (assessment == 'nutrition') {
+        var active_div = form.find('div.nutrition_aspects_div');
+      }
+      var aspect_scores = [];
+      active_div.find('input[type="number"]').each(function () {
+        var self = $(this);
+        var name = self.attr('name');
+        var score_obj = {};
+        score_obj[name] = self.val();
+        aspect_scores.push(score_obj);
+      });
+      $.ajax({
+        url: form.attr('action'),
+        type: 'post',
+        dataType: 'json',
+        data: {user_id: user_id, assessment: assessment, aspect_scores: aspect_scores, assessment_date: assessment_date, device: form.find('#ams_device').val()},
+        error: function () {
+          alert('There is some error, please try again later');
+        },
+        success: function (result) {
+          if (result.status == 'success') {
+            alert(result.msg);
+            window.location.href = result.url;
+          }
+          else {
+            alert(result.msg);
+            window.location.href = result.url;
+          }
+
+        }
+      })
+    }
   });
 }
+
+
+/****** FUNCTION TO Check the REQUIRED FIELDS *****/
+{
+  function checkRequiredFields(form) {
+    var errorMessage = "";
+    form.find('.required-field').each(function () {
+      if ($(this).val().trim() == "" && !$(this).closest('div.student-analysis').parent('div').hasClass("d-none")) {
+        errorMessage += ($(this).attr('fieldDisplayName') ? $(this).attr('fieldDisplayName') : $(this).attr('name')) + " can't be blank.\n";
+      }
+    });
+    return errorMessage;
+  }
+}
+
