@@ -27,7 +27,9 @@
                   <i class="fa fa-caret-down position-absolute"></i>
                   <select class="analysis-drop-down select-player coach_student_select_dropdown" name="user_id">
                     <% users.each {|user| %>
-                        <option value="<%= user.id %>"><%= user.name.titleize %></option>
+                        <% if user.user_type.eql? 0 %>
+                            <option value="<%= user.id %>"><%= user.name.titleize %></option>
+                        <% end %>
                     <% } %>
                   </select>
                 </div>
