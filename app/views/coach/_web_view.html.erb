@@ -6,30 +6,38 @@
         <div class="card-body">
           <h4 class="card-title">Update/Add athlete data</h4>
           <p class="card-text"></p>
-          <div class="btn btn-primary" id="view_data_form">Go somewhere</div>
+          <div class="btn btn-primary view_data_form">Go somewhere</div>
         </div>
         <div class="form-container d-none">
           <form id="main-form" method="post" action="<%= coach_submit_user_score_path %>">
             <div class="form-group">
-              <div class="input-headers color-orange font-weight-bold mb-3 mt-sm-5">Add Training Data</div>
+              <!--<label class="input-headers color-orange mb-3 mt-2">Add Training Data</label>-->
               <div class="mb-4">
                 <div class="student-analysis position-relative">
-                  <select class="analysis-dropdown select-player coach_student_select_dropdown" name="user_id">
-                    <% users.each {|user| %>
-                        <option value="<%= user.id %>"><%= user.name.titleize%></option>
-                    <% } %>
-                  </select>
-                  <i class="fa fa-caret-down position-absolute"></i>
+                  <label>Select Assessment Date</label>
+                  <input type="date" class="form-control b-bottom required-field" name="assessment_date" fieldDisplayName="" id="input-date" aria-describedby="Date" placeholder="Date" required>
                 </div>
               </div>
               <div class="mb-4">
                 <div class="student-analysis position-relative">
-                  <select class="analysis-dropdown select-assessment coach_assessment_select_dropdown">
+                  <label class="d-block">Select Athlete</label>
+                  <i class="fa fa-caret-down position-absolute"></i>
+                  <select class="analysis-drop-down select-player coach_student_select_dropdown" name="user_id">
+                    <% users.each {|user| %>
+                        <option value="<%= user.id %>"><%= user.name.titleize%></option>
+                    <% } %>
+                  </select>
+                </div>
+              </div>
+              <div class="mb-4">
+                <div class="student-analysis position-relative">
+                  <label class="d-block">Select Assessment Type</label>
+                  <i class="fa fa-caret-down position-absolute"></i>
+                  <select class="analysis-drop-down select-assessment coach_assessment_select_dropdown">
                     <option value="physical" selected>Physical</option>
                     <option value="mental">Mental</option>
                     <option value="nutrition">Nutrition</option>
                   </select>
-                  <i class="fa fa-caret-down position-absolute"></i>
                 </div>
               </div>
               <div class="mb-4 physical_aspects_div">
@@ -68,13 +76,8 @@
                   </div>
                 </div>
               </div>
-              <div class="mb-4">
-                <div class="student-analysis position-relative">
-                  <input type="date" class="form-control b-bottom required-field" name="assessment_date" fieldDisplayName="" id="input-date" aria-describedby="Date" placeholder="Date" required>
-                </div>
-              </div>
             </div>
-            <div class="text-center">
+            <div class="text-center submit-button-container">
               <button type="submit" class="mx-auto send-message-button cursor-pointer user_data_submit_button">SUBMIT</button>
             </div>
           </form>
@@ -86,7 +89,7 @@
         <div class="card-body">
           <h4 class="card-title">View athlete data</h4>
           <p class="card-text"></p>
-          <div class="btn btn-primary" id="view_data_athlete">Go somewhere</div>
+          <div class="btn btn-primary view_data_athlete">Go somewhere</div>
         </div>
       </div>
     </div>

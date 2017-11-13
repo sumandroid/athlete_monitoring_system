@@ -17,19 +17,17 @@
   width: 113px;
   background-color: transparent;
   color: #95989A;
-  padding-left: 8px;
   font-weight: 600;
-  padding-top: 3px;
-  padding-bottom: 3px;
   position: relative;
   z-index: 3;
+  padding: .5rem .75rem;
 }
 
 .student-analysis .fa.fa-caret-down {
   color: #95989A;
   position: absolute;
   left: 92px;
-  top: 7px;
+  top: 38px;
   z-index: 1;
 }
 
@@ -58,3 +56,44 @@
   width: 90%;
   margin: 0 auto;
 }
+
+input.form-control, select{
+  font-size: 12px;
+  border-radius: 0.25rem;
+}
+
+input[type='date']{
+  width: 150px;
+  color: #95989A;
+}
+
+button[type='submit']{
+  background-color: #4d4d4d;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid #4d4d4d;
+  padding: .5rem .75rem;
+  font-size: 1rem;
+  line-height: 1.25;
+  border-radius: .25rem;
+  transition: all .15s ease-in-out;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  font-weight: 600;
+  color: #fff;
+}
+
+button[type='submit']:hover{
+  background-color: #222;
+}
+
+.submit-button-container{
+  margin-bottom: 30px;
+}
+
