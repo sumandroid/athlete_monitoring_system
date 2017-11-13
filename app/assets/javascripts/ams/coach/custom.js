@@ -19,7 +19,17 @@
       form.find('div.mental_aspects_div').addClass('d-none');
       form.find('div.nutrition_aspects_div').removeClass('d-none');
     }
-  });
+      $('.score-input-parent input.form-control').css("border", "1px solid #f37736").animate({
+        'borderWidth': '1px',
+        'borderColor': '#f37736'
+      },500);
+    setTimeout(function () {
+      $('.score-input-parent input.form-control').animate({
+        'borderWidth': '1px',
+        'borderColor': '1px solid rgba(0,0,0,.15)'
+      },500).css("border", "1px solid rgba(0,0,0,.15)");
+    },600)
+    });
 }
 
 /************ Card animation script ************/
@@ -50,10 +60,10 @@ $(function () {
         'width' : card_width
       });
       $('.add_data_card .data-card').css({
-        'border': 'none'
+        'border': '1px solid rgba(0,0,0,.325)'
       });
       $('.add_data_card').css({
-        'border': '1px solid rgba(0,0,0,.325)'
+        'border': 'none'
       });
       setTimeout(function () {
         add_data_card.animate({
@@ -61,7 +71,7 @@ $(function () {
         },400, function () {
           add_data_card.animate({
             'width': '100%',
-            'height': '630px'
+            'height': '600px'
           });
           view_data_card.animate({
             'width': '100%'
