@@ -1,2 +1,2 @@
-<%= render(:partial => 'web_view') if @web_view%>
+<%= render(:partial => 'web_view', :locals => {:user_physical_score_map => @user_physical_scores, :user_nutrition_score_map => @user_nutrition_scores, :user_mental_score_map => @user_mental_scores}) if @web_view%>
 <%= render(:partial => 'mobile_view') if @mob_view%>
