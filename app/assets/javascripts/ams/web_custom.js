@@ -277,7 +277,7 @@ $(function () {
       var day_nav = $('.mon.col-2').width();
       $('.overlay-indicator').width(day_nav + 27);
     }
-  })
+  });
 
   $('.comparison-select').on('click', function () {
     if ($('.comparison').hasClass('d-none')) {
@@ -298,7 +298,7 @@ $(function () {
         'color': 'rgba(0, 0, 0, 0.54)'
       });
     }
-  })
+  });
 
   $('.events-select').on('click', function () {
     if ($('.events').hasClass('d-none')) {
@@ -391,7 +391,7 @@ $(function () {
 
   if ($(window).width() <= 767) {
     var tab_height = $('#tab-1').height();
-    $('.tab-content').height(600);
+    $('.tab-content.user-tab-mobile').height(600);
   }
 
   if ($(window).width() > 767) {

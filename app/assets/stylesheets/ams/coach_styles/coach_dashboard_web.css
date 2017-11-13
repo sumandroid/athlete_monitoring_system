@@ -97,3 +97,12 @@ button[type='submit']:hover{
   margin-bottom: 30px;
 }
 
+.athlete-list-container{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.athlete-img img{
+  height: 50px;
+  width: 50px;
+}

@@ -1,0 +1,93 @@
+<body>
+<div class="card">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs mb-0">
+      <li class="nav-item">
+        <a class="nav-link active coach-nav-tabs" href="#update-add" data-toggle="tab">Update/Add</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link coach-nav-tabs" href="#view" data-toggle="tab">View</a>
+      </li>
+    </ul>
+    <div class="tab-content coach-tab-mobile mt-4">
+      <div role="tabpanel" class="tab-pane active" id="update-add">
+        <div class="form-container">
+          <form id="main-form" method="post" action="<%= coach_submit_user_score_path %>">
+            <div class="form-group">
+              <!--<label class="input-headers color-orange mb-3 mt-2">Add Training Data</label>-->
+              <div class="mb-4">
+                <div class="student-analysis position-relative">
+                  <label>Select Assessment Date</label>
+                  <input type="date" class="form-control b-bottom required-field" name="assessment_date" fieldDisplayName="" id="input-date" aria-describedby="Date" placeholder="Date" required>
+                </div>
+              </div>
+              <div class="mb-4">
+                <div class="student-analysis position-relative">
+                  <label class="d-block">Select Athlete</label>
+                  <i class="fa fa-caret-down position-absolute"></i>
+                  <select class="analysis-drop-down select-player coach_student_select_dropdown" name="user_id">
+
+                  </select>
+                </div>
+              </div>
+              <div class="mb-4">
+                <div class="student-analysis position-relative">
+                  <label class="d-block">Select Assessment Type</label>
+                  <i class="fa fa-caret-down position-absolute"></i>
+                  <select class="analysis-drop-down select-assessment coach_assessment_select_dropdown">
+                    <option value="physical" selected>Physical</option>
+                    <option value="mental">Mental</option>
+                    <option value="nutrition">Nutrition</option>
+                  </select>
+                </div>
+              </div>
+              <div class="mb-4 physical_aspects_div">
+                <div class="student-analysis position-relative">
+                  <label>Scores</label>
+                  <div class="score-input-parent">
+                    <input type="number" class="form-control b-bottom required-field score-input mb-4" name="agility" fieldDisplayName="" id="" aria-describedby="" placeholder="Agility" required>
+                    <input type="number" class="form-control b-bottom required-field score-input mb-4" name="balance" fieldDisplayName="" id="" aria-describedby="" placeholder="Balance" required>
+                    <input type="number" class="form-control b-bottom required-field score-input mb-4" name="endurance" fieldDisplayName="" id="" aria-describedby="" placeholder="Endurance" required>
+                    <input type="number" class="form-control b-bottom required-field score-input mb-4" name="flexibility" fieldDisplayName="" id="" aria-describedby="" placeholder="Flexibility" required>
+                    <input type="number" class="form-control b-bottom required-field score-input" name="speed" fieldDisplayName="" id="" aria-describedby="" placeholder="Speed" required>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-4 mental_aspects_div d-none">
+                <div class="student-analysis position-relative">
+                  <label>Scores</label>
+                  <div class="score-input-parent">
+                    <input type="number" class="form-control b-bottom required-field score-input mb-4" name="attention_control" fieldDisplayName="" id="" aria-describedby="" placeholder="Attention Control" required>
+                    <input type="number" class="form-control b-bottom required-field score-input mb-4" name="negative_energy_control" fieldDisplayName="" id="" aria-describedby="" placeholder="Negative Energy Control" required>
+                    <input type="number" class="form-control b-bottom required-field score-input mb-4" name="positive_energy_control" fieldDisplayName="" id="" aria-describedby="" placeholder="Positive Energy Control" required>
+                    <input type="number" class="form-control b-bottom required-field score-input mb-4" name="motivation_level" fieldDisplayName="" id="" aria-describedby="" placeholder="Motivation Level" required>
+                    <input type="number" class="form-control b-bottom required-field score-input" name="attitude_control" fieldDisplayName="" id="" aria-describedby="" placeholder="Attitude Control" required>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-4 nutrition_aspects_div d-none">
+                <div class="student-analysis position-relative">
+                  <label>Scores</label>
+                  <div class="score-input-parent">
+                    <input type="number" class="form-control b-bottom required-field score-input mb-4" name="calories" fieldDisplayName="" id="" aria-describedby="" placeholder="Calories" required>
+                    <input type="number" class="form-control b-bottom required-field score-input mb-4" name="carbohydrates" fieldDisplayName="" id="" aria-describedby="" placeholder="Carbohydrates" required>
+                    <input type="number" class="form-control b-bottom required-field score-input mb-4" name="protein" fieldDisplayName="" id="" aria-describedby="" placeholder="Protein" required>
+                    <input type="number" class="form-control b-bottom required-field score-input mb-4" name="fibre" fieldDisplayName="" id="" aria-describedby="" placeholder="Fibre" required>
+                    <input type="number" class="form-control b-bottom required-field score-input" name="vitamins_and_minerals" fieldDisplayName="" id="" aria-describedby="" placeholder="Vitamins & Minerals" required>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="text-center submit-button-container">
+              <button type="submit" class="mx-auto send-message-button cursor-pointer user_data_submit_button">SUBMIT</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="view">
+        2
+      </div>
+    </div>
+  </div>
+</div>
+</body>

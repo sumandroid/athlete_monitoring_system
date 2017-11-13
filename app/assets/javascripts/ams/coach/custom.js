@@ -19,22 +19,26 @@
       form.find('div.mental_aspects_div').addClass('d-none');
       form.find('div.nutrition_aspects_div').removeClass('d-none');
     }
-      $('.score-input-parent input.form-control').css("border", "1px solid #f37736").animate({
-        'borderWidth': '1px',
-        'borderColor': '#f37736'
-      },500);
+    $('.score-input-parent input.form-control').css("border", "1px solid #f37736").animate({
+      'borderWidth': '1px',
+      'borderColor': '#f37736'
+    }, 500);
     setTimeout(function () {
       $('.score-input-parent input.form-control').animate({
         'borderWidth': '1px',
         'borderColor': '1px solid rgba(0,0,0,.15)'
-      },500).css("border", "1px solid rgba(0,0,0,.15)");
-    },600)
-    });
+      }, 500).css("border", "1px solid rgba(0,0,0,.15)");
+    }, 600)
+  });
 }
 
 /************ Card animation script ************/
 
 $(function () {
+  if ($(window).width() <= 767) {
+    $('.tab-content.coach-tab-mobile').css("height", "auto");
+  }
+
   var card_height = $('.card').height();
   var card_width = $('.card').width();
   $('.view_data_form').on('click', function () {
@@ -51,13 +55,13 @@ $(function () {
       view_data_card.css({
         'top': '0',
         'right': '0',
-        'width' : card_width
+        'width': card_width
       });
       container_animating.css({
         'position': 'relative'
       });
       add_data_card.css({
-        'width' : card_width
+        'width': card_width
       });
       $('.add_data_card .data-card').css({
         'border': '1px solid rgba(0,0,0,.325)'
@@ -68,23 +72,23 @@ $(function () {
       setTimeout(function () {
         add_data_card.animate({
           'top': card_height + 15
-        },400, function () {
+        }, 400, function () {
           add_data_card.animate({
             'width': '100%',
             'height': '600px'
           });
           view_data_card.animate({
             'width': '100%'
-          },400, function () {
+          }, 400, function () {
             $('.form-container').removeClass('d-none');
           });
         });
-      },400);
+      }, 400);
       $('.score-input-parent').css({
-        'justify-content' : 'space-around'
+        'justify-content': 'space-around'
       });
       $('.score-input-parent .score-input').css({
-        'width' : '180px'
+        'width': '180px'
       });
       view_data_card.addClass('view-shrink');
     }
@@ -102,14 +106,14 @@ $(function () {
       $('.add_data_card').addClass('position-absolute');
       $('.view_data_card').addClass('position-absolute');
       add_data_card.css({
-        'width' : card_width
+        'width': card_width
       });
       container_animating.css({
         'position': 'relative'
       });
       view_data_card.css({
-        'right' : '0',
-        'width' : card_width
+        'right': '0',
+        'width': card_width
       });
       $('.view_data_card .data-card').css({
         'border': 'none'
@@ -121,7 +125,7 @@ $(function () {
       setTimeout(function () {
         view_data_card.animate({
           'top': card_height + 15
-        },400, function () {
+        }, 400, function () {
           view_data_card.animate({
             'width': '100%',
             'height': 'auto'
@@ -143,7 +147,7 @@ $(function () {
     if ($('.view_data_card').hasClass('view-shrink')) {
       view_data_card.removeClass('view-shrink');
       $('.form-container').animate({
-        'opacity' : 0
+        'opacity': 0
       });
       setTimeout(function () {
         add_data_card.animate({
@@ -154,7 +158,7 @@ $(function () {
           });
           $('.form-container').addClass('d-none');
         });
-      },400);
+      }, 400);
 
       $('.add_data_card .data-card').css({
         'border-bottom': '1px solid rgba(0,0,0,.325)'
@@ -171,6 +175,16 @@ $(function () {
       view_data_card.animate({
         'top': card_height + 15,
         'height': 'auto'
+      },400, function () {
+        setTimeout(function () {
+          $('.athlete-list-container').css({
+            'opacity': '0'
+          });
+          $('.athlete-list-container').removeClass('d-none');
+          $('.athlete-list-container').animate({
+            'opacity': 1
+          }, 900)
+        }, 400);
       });
       add_data_card.addClass('view-shrink');
     }
@@ -205,23 +219,22 @@ $(function () {
 
       add_data_card.animate({
         'top': card_height + 15,
-        'height' : '600px'
-      },400, function () {
+        'height': '600px'
+      }, 400, function () {
         setTimeout(function () {
           $('.form-container').css({
-            'opacity' : '0'
+            'opacity': '0'
           });
           $('.form-container').removeClass('d-none');
           $('.form-container').animate({
-            'opacity' : 1
-          },900)
-        },400);
+            'opacity': 1
+          }, 900)
+        }, 400);
       });
       view_data_card.addClass('view-shrink');
     }
   })
 });
-
 
 
 /**************** user data form submit form **************/
