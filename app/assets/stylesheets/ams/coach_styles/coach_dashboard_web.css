@@ -6,11 +6,13 @@
   position: absolute;
 }
 
-.student-analysis{
 
+
+.coach-view.container{
+  margin-top: 40px!important;
 }
 
-.analysis-dropdown {
+.analysis-drop-down {
   -webkit-appearance: none;
   width: 113px;
   background-color: transparent;
@@ -19,14 +21,16 @@
   font-weight: 600;
   padding-top: 3px;
   padding-bottom: 3px;
+  position: relative;
+  z-index: 3;
 }
 
-.analysis-dropdown ~ i {
+.student-analysis .fa.fa-caret-down {
   color: #95989A;
   position: absolute;
-  right: 12px;
+  left: 92px;
   top: 7px;
-  z-index: -1;
+  z-index: 1;
 }
 
 .score-input-parent{
@@ -34,5 +38,23 @@
 }
 
 .score-input-parent .score-input{
-  width: 60px!important;
+  width: 120px;
+}
+
+.card{
+  border: 1px solid rgba(0,0,0,.325);
+}
+
+.btn.view_data_athlete, .btn.view_data_form{
+  background-color: #4d4d4d;
+  border-color: #4d4d4d;
+}
+
+.btn.view_data_athlete:hover, .btn.view_data_form:hover{
+  background-color: #222;
+}
+
+.form-container {
+  width: 90%;
+  margin: 0 auto;
 }

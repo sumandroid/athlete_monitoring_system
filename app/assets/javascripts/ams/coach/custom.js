@@ -26,90 +26,192 @@
 
 $(function () {
   var card_height = $('.card').height();
-  $('#view_data_form').on('click', function () {
+  var card_width = $('.card').width();
+  $('.view_data_form').on('click', function () {
     var self = $(this);
     var container_animating = self.closest('.animate_container');
     var add_data_card = $('.add_data_card')
     var view_data_card = $('.view_data_card');
-    if (container_animating.hasClass('make-flex')) {
+    if (container_animating.hasClass('make-flex') === true) {
       container_animating.removeClass('make-flex');
       self.closest('.add_data_card').removeClass('col-sm-6');
       $('.view_data_card').removeClass('col-sm-6');
       $('.view_data_card').addClass('position-absolute');
+      $('.add_data_card').addClass('position-absolute');
       view_data_card.css({
-        'position': 'absolute',
         'top': '0',
-        'right': '0'
+        'right': '0',
+        'width' : card_width
       });
       container_animating.css({
         'position': 'relative'
       });
       add_data_card.css({
-        'position': 'absolute'
+        'width' : card_width
       });
       $('.add_data_card .data-card').css({
         'border': 'none'
       });
       $('.add_data_card').css({
-        'border': '1px solid rgba(0,0,0,.125)'
+        'border': '1px solid rgba(0,0,0,.325)'
       });
-      add_data_card.animate({
-        'top': card_height + 15,
-        'width': '100%',
-        'height': '560px'
-      });
-      $('.form-container').removeClass('d-none');
-      view_data_card.animate({
-        'width': '100%'
-      });
+      setTimeout(function () {
+        add_data_card.animate({
+          'top': card_height + 15
+        },400, function () {
+          add_data_card.animate({
+            'width': '100%',
+            'height': '630px'
+          });
+          view_data_card.animate({
+            'width': '100%'
+          },400, function () {
+            $('.form-container').removeClass('d-none');
+          });
+        });
+      },400);
       $('.score-input-parent').css({
-        'justify-content': 'space-around'
+        'justify-content' : 'space-around'
       });
       $('.score-input-parent .score-input').css({
-        'width': '180px'
+        'width' : '180px'
       });
       view_data_card.addClass('view-shrink');
     }
   });
 
-  $('#view_data_athlete').on('click', function () {
+  $('.view_data_athlete').on('click', function () {
+    var self = $(this);
+    var container_animating = self.closest('.animate_container');
+    var add_data_card = $('.add_data_card')
+    var view_data_card = $('.view_data_card');
+    if (container_animating.hasClass('make-flex') === true) {
+      container_animating.removeClass('make-flex');
+      self.closest('.view_data_card').removeClass('col-sm-6');
+      $('.add_data_card').removeClass('col-sm-6');
+      $('.add_data_card').addClass('position-absolute');
+      $('.view_data_card').addClass('position-absolute');
+      add_data_card.css({
+        'width' : card_width
+      });
+      container_animating.css({
+        'position': 'relative'
+      });
+      view_data_card.css({
+        'right' : '0',
+        'width' : card_width
+      });
+      $('.view_data_card .data-card').css({
+        'border': 'none'
+      });
+      $('.view_data_card').css({
+        'border': '1px solid rgba(0,0,0,.325)'
+      });
+      // $('.form-container').removeClass('d-none');
+      setTimeout(function () {
+        view_data_card.animate({
+          'top': card_height + 15
+        },400, function () {
+          view_data_card.animate({
+            'width': '100%',
+            'height': 'auto'
+          });
+          add_data_card.animate({
+            'width': '100%'
+          });
+        });
+      }, 400);
+      add_data_card.addClass('view-shrink');
+    }
+  });
+
+  $('.view_data_athlete').on('click', function () {
     var self = $(this);
     var container_animating = self.closest('.animate_container');
     var add_data_card = $('.add_data_card')
     var view_data_card = $('.view_data_card');
     if ($('.view_data_card').hasClass('view-shrink')) {
       view_data_card.removeClass('view-shrink');
-      view_data_card.css({
-        'width': 'unset'
+      $('.form-container').animate({
+        'opacity' : 0
       });
-      $('.form-container').addClass('d-none')
-      add_data_card.animate({
-        'top': 0,
-        'width': '100%',
-        'height': card_height
-      });
+      setTimeout(function () {
+        add_data_card.animate({
+          'height': card_height
+        }, 400, function () {
+          add_data_card.animate({
+            'top': 0
+          });
+          $('.form-container').addClass('d-none');
+        });
+      },400);
 
       $('.add_data_card .data-card').css({
-        'border': '1px solid rgba(0,0,0,.125)'
+        'border-bottom': '1px solid rgba(0,0,0,.325)'
       });
 
       $('.view_data_card .data-card').css({
-        'border': 'none'
+        'border-color': 'none'
       });
 
-      view_data_card.css({
-        'border': '1px solid rgba(0,0,0,.125)'
-      });
+      // view_data_card.css({
+      //   'border': '1px solid rgba(0,0,0,.325)'
+      // });
 
-      view_data_card.css({
+      view_data_card.animate({
         'top': card_height + 15,
-        'width': '100%',
-        'height': '630px'
+        'height': 'auto'
       });
       add_data_card.addClass('view-shrink');
     }
+  });
+
+  $('.view_data_form').on('click', function () {
+    var self = $(this);
+    var container_animating = self.closest('.animate_container');
+    var add_data_card = $('.add_data_card')
+    var view_data_card = $('.view_data_card');
+    if ($('.add_data_card').hasClass('view-shrink')) {
+      add_data_card.removeClass('view-shrink');
+      view_data_card.animate({
+        'height': card_height
+      }, 400, function () {
+        view_data_card.animate({
+          'top': 0
+        })
+      });
+
+      $('.view_data_card .data-card').css({
+        'border-bottom': '1px solid rgba(0,0,0,.325)'
+      });
+
+      $('.add_data_card .data-card').css({
+        'border': '1px solid rgba(0,0,0,.325)'
+      });
+
+      add_data_card.css({
+        'border': 'none'
+      });
+
+      add_data_card.animate({
+        'top': card_height + 15,
+        'height' : '600px'
+      },400, function () {
+        setTimeout(function () {
+          $('.form-container').css({
+            'opacity' : '0'
+          });
+          $('.form-container').removeClass('d-none');
+          $('.form-container').animate({
+            'opacity' : 1
+          },900)
+        },400);
+      });
+      view_data_card.addClass('view-shrink');
+    }
   })
 });
+
 
 
 /**************** user data form submit form **************/
