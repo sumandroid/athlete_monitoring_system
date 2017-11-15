@@ -16,14 +16,16 @@
   .select-footer .trend-analysis-select,
   .select-footer .schedule-select,
   .select-footer .comparison-select,
-  .select-footer .events-select{
+  .select-footer .events-select,
+  .select-footer .news-select{
     padding: 3px;
   }
 
   .select-footer .trend-analysis-select span,
   .select-footer .schedule-select span,
   .select-footer .comparison-select span,
-  .select-footer .events-select span{
+  .select-footer .events-select span,
+  .select-footer .news-select span{
     font-size: 11px;
   }
 
@@ -33,14 +35,16 @@
 
   .select-footer .schedule-select span, .select-footer .schedule-select i.fa,
   .select-footer .comparison-select span, .select-footer .comparison-select i.fa,
-  .select-footer .events-select span, .select-footer .events-select i.fa{
+  .select-footer .events-select span, .select-footer .events-select i.fa,
+  .select-footer .news-select span, .select-footer .news-select i.fa{
     color: rgba(0, 0, 0, 0.54);
   }
 
   .select-footer .trend-analysis-select i.fa,
   .select-footer .schedule-select i.fa,
   .select-footer .comparison-select i.fa,
-  .select-footer .events-select i.fa{
+  .select-footer .events-select i.fa,
+  .select-footer .news-select i.fa{
     font-size: 20px !important;
   }
 
@@ -116,7 +120,9 @@
   }
 
 
-  ul.week-days{
+  ul.week-days,
+  ul.event-nav,
+  ul.news-tweets-nav{
     background-color: #4d4d4d;
     display: flex;
     color: white;
@@ -128,7 +134,9 @@
     width: 100%;
   }
 
-  .week-days li{
+  .week-days li,
+  .event-nav li,
+  .news-tweets-nav li{
     padding-top: 12px;
     padding-bottom: 12px;
   }
@@ -189,4 +197,43 @@
   .dashboard-fixed-portlet .event-venue{
     font-size: 12px;
   }
+
+  #tab-tweets,#tab-news{
+    position: absolute;
+    width: 100%;
+  }
+
+  #tab-news{
+    left:0;
+    /*top:15px;*/
+  }
+
+  #tab-tweets{
+    left: 100vw;
+    /*top: 15px;*/
+  }
+
+  .news-container .news{
+    border-bottom: 1px solid #dbdbdb;
+    padding: 24px;
+  }
+
+  .news-img img{
+    height: 60px;
+    width: 90px;
+  }
+
+  .news-text{
+    margin-left: 24px;
+  }
+
+  .news-text p{
+    font-size: 0.8rem;
+  }
+
+  .news-text small{
+    font-size: 70%;
+    margin-bottom: 0;
+  }
+
 }

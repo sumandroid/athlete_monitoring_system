@@ -124,10 +124,18 @@ header .athlete-img img{
   background-color: #797979;
 }
 
+.graph-container,
+.tabs-container,
+.comparison-graph-container,
+.events-container,
+.trend-analysis-container{
+  border: 1px solid grey;
+}
+
 .graph-container{
   height: 569px;
   margin-top: 10px;
-  border: 1px solid grey;
+  /*border: 1px solid grey;*/
   position: relative;
 }
 
@@ -149,7 +157,7 @@ header .athlete-img img{
 .comparison-graph-container{
   height: 569px;
   margin-top: 10px;
-  border: 1px solid grey;
+  /*border: 1px solid grey;*/
   width: 100%;
 }
 
@@ -171,7 +179,7 @@ header .athlete-img img{
 
 .tabs-container{
   margin-top: 10px;
-  border: 1px solid grey;
+  /*border: 1px solid grey;*/
 }
 
 
@@ -210,8 +218,9 @@ header .athlete-img img{
 .trend-analysis .schedule,
 .week-container .schedule,
 .comparison-analysis .schedule,
-.events .schedule{
-  font-size: 22px;
+.events .schedule,
+.news-social .schedule{
+  font-size: 25px;
   color: #797979;
   font-weight: 700;
 }
@@ -339,7 +348,7 @@ td.drill-stat{
 }
 
 .events-container{
-  border: 1px solid grey;
+  /*border: 1px solid grey;*/
 }
 
 .dashboard-fixed-portlet{
@@ -370,3 +379,104 @@ td.drill-stat{
 .dashboard-fixed-portlet .event-venue{
   color: #797979;
 }
+
+.news-social{
+  height: auto;
+}
+
+.news-social-container{
+  height: 700px;
+  margin-top: 20px;
+}
+
+.news-container{
+  height: 625px;
+  /*overflow-y: scroll;*/
+}
+
+.news-social-container .news-container .news{
+  border-bottom: 1px solid #dbdbdb;
+  padding: 24px;
+}
+
+.news-img img{
+  height: 140px;
+  width: 220px;
+}
+
+.news-text{
+  margin-left: 24px;
+}
+
+.news-text p{
+  font-size: 1rem;
+}
+
+.news-text small{
+  display: inline-block;
+  margin-bottom: .5rem;
+}
+
+.social-container{
+  height: 100%;
+}
+
+.social{
+  height: 100%;
+}
+
+.news-container::-webkit-scrollbar {
+  width: 1.5px;
+  background: transparent/* make scrollbar transparent */
+}
+
+.news-container { overflow:scroll; }
+
+.news-container:hover::-webkit-scrollbar {
+  background: #dbdbdb/* make scrollbar transparent */
+}
+
+.news-container:hover::-webkit-scrollbar-thumb{
+  background: #323232;
+}
+
+
+.sub-header-text{
+  font-size: 27px;
+  line-height: 36px;
+  color: #292F33;
+  font-weight: 300;
+  padding: 10px;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+/*--------- Twitter iframe Custom Style ---------*/
+
+a.twitter-timeline {
+  /* Buttonish */
+  display: inline-block;
+  padding: 6px 12px 6px 30px;
+  margin: 10px 0;
+  border: #ccc solid 1px;
+  border-radius: 3px;
+  background: #f8f8f8 url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNzIgNzIiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDcyIDcyIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxyZWN0IHg9IjAiIGZpbGw9Im5vbmUiIHdpZHRoPSI3MiIgaGVpZ2h0PSI3MiIvPg0KPHBhdGggZmlsbD0iIzU1YWNlZSIgZD0iTTY4LjgxMiwxNS4xNDFjLTIuMzQ4LDEuMDM5LTQuODY5LDEuNzQzLTcuNTE5LDIuMDZjMi43MDMtMS42Miw0Ljc3OC00LjE4Nyw1Ljc1Ni03LjI0NGMtMi41MjksMS41LTUuMzMsMi41OTItOC4zMTMsMy4xNzYNCglDNTYuMzQ5LDEwLjU5MSw1Mi45NDgsOSw0OS4xODIsOWMtNy4yMjksMC0xMy4wOTIsNS44NjEtMTMuMDkyLDEzLjA5M2MwLDEuMDI2LDAuMTE4LDIuMDIxLDAuMzM4LDIuOTgxDQoJYy0xMC44ODUtMC41NDgtMjAuNTI4LTUuNzU3LTI2Ljk4Ny0xMy42NzljLTEuMTI2LDEuOTM2LTEuNzcxLDQuMTg0LTEuNzcxLDYuNTgxYzAsNC41NDIsMi4zMTIsOC41NTEsNS44MjQsMTAuODk4DQoJYy0yLjE0Ni0wLjA2OS00LjE2NS0wLjY1Ny01LjkzLTEuNjM4Yy0wLjAwMiwwLjA1NS0wLjAwMiwwLjExLTAuMDAyLDAuMTYyYzAsNi4zNDUsNC41MTMsMTEuNjM4LDEwLjUwNCwxMi44NA0KCWMtMS4xMDEsMC4yOTgtMi4yNTYsMC40NTctMy40NDksMC40NTdjLTAuODQ2LDAtMS42NjctMC4wNzgtMi40NjUtMC4yMzFjMS42NjcsNS4yLDYuNDk5LDguOTg2LDEyLjIzLDkuMDkNCgljLTQuNDgyLDMuNTEyLTEwLjEyOSw1LjYwNi0xNi4yNiw1LjYwNmMtMS4wNTUsMC0yLjA5Ni0wLjA2MS0zLjEyMi0wLjE4NGM1Ljc5NCwzLjcxNywxMi42NzYsNS44ODIsMjAuMDY3LDUuODgyDQoJYzI0LjA4MywwLDM3LjI1MS0xOS45NDksMzcuMjUxLTM3LjI0OWMwLTAuNTY2LTAuMDE0LTEuMTM0LTAuMDM5LTEuNjk0QzY0LjgzOCwyMC4wNjgsNjcuMDU4LDE3Ljc2NSw2OC44MTIsMTUuMTQxeiIvPg0KPC9zdmc+DQo=") 8px 8px no-repeat;
+  background-size: 1em 1em;
+
+  /* Text */
+  font: normal 12px/18px Helvetica, Arial, sans-serif;
+  color: #333;
+  white-space: nowrap;
+}
+
+a.twitter-timeline:hover,
+a.twitter-timeline:focus {
+  background-color: #dedede;
+}
+
+/* Color Highlight for keyboard navigation */
+
+a.twitter-timeline:focus {
+  outline: none;
+  border-color: #0089cb;
+}
+

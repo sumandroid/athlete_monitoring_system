@@ -241,6 +241,7 @@ $(function () {
       $('.comparison').addClass('d-none');
       $('.events').addClass('d-none');
       $('.trend-analysis-container').removeClass('d-none');
+      $('.news-social').addClass('d-none');
       $('.select-footer .trend-analysis-select i, .select-footer .trend-analysis-select span').css({
         'color': '#222'
       });
@@ -251,6 +252,9 @@ $(function () {
         'color': 'rgba(0, 0, 0, 0.54)'
       });
       $('.select-footer .events-select i, .select-footer .events-select span').css({
+        'color': 'rgba(0, 0, 0, 0.54)'
+      });
+      $('.select-footer .news-select i, .select-footer .news-select span').css({
         'color': 'rgba(0, 0, 0, 0.54)'
       });
     }
@@ -262,6 +266,7 @@ $(function () {
       $('.trend-analysis-container').addClass('d-none');
       $('.comparison').addClass('d-none');
       $('.events').addClass('d-none');
+      $('.news-social').addClass('d-none');
       $('.select-footer .schedule-select i, .select-footer .schedule-select span').css({
         'color': '#222'
       });
@@ -274,8 +279,11 @@ $(function () {
       $('.select-footer .events-select i, .select-footer .events-select span').css({
         'color': 'rgba(0, 0, 0, 0.54)'
       });
+      $('.select-footer .news-select i, .select-footer .news-select span').css({
+        'color': 'rgba(0, 0, 0, 0.54)'
+      });
       var day_nav = $('.mon.col-2').width();
-      $('.overlay-indicator').width(day_nav + 27);
+      $('.schedule-container .overlay-indicator').width(day_nav + 27);
     }
   });
 
@@ -285,6 +293,7 @@ $(function () {
       $('.trend-analysis-container').addClass('d-none');
       $('.schedule-container').addClass('d-none');
       $('.events').addClass('d-none');
+      $('.news-social').addClass('d-none');
       $('.select-footer .comparison-select i, .select-footer .comparison-select span').css({
         'color': '#222'
       });
@@ -295,6 +304,9 @@ $(function () {
         'color': 'rgba(0, 0, 0, 0.54)'
       });
       $('.select-footer .events-select i, .select-footer .events-select span').css({
+        'color': 'rgba(0, 0, 0, 0.54)'
+      });
+      $('.select-footer .news-select i, .select-footer .news-select span').css({
         'color': 'rgba(0, 0, 0, 0.54)'
       });
     }
@@ -306,6 +318,7 @@ $(function () {
       $('.trend-analysis-container').addClass('d-none');
       $('.schedule-container').addClass('d-none');
       $('.comparison').addClass('d-none');
+      $('.news-social').addClass('d-none');
       $('.select-footer .events-select i, .select-footer .events-select span').css({
         'color': '#222'
       });
@@ -318,33 +331,64 @@ $(function () {
       $('.select-footer .comparison-select i, .select-footer .comparison-select span').css({
         'color': 'rgba(0, 0, 0, 0.54)'
       });
+      $('.select-footer .news-select i, .select-footer .news-select span').css({
+        'color': 'rgba(0, 0, 0, 0.54)'
+      });
       var events_nav = $('.upcoming.col-6').width();
       $('.overlay-indicator').width(events_nav + 27);
     }
-  })
-});
+  });
 
-/************** footer view change script ************/
-$(function () {
-  $('.trend-analysis-select').on('click', function () {
-    if ($('.trend-analysis-container').hasClass('d-none')) {
+  $('.news-select').on('click', function () {
+    if ($('.news-social').hasClass('d-none')) {
+      $('.news-social').removeClass('d-none');
+      $('.trend-analysis-container').addClass('d-none');
       $('.schedule-container').addClass('d-none');
-      $('.trend-analysis-container').removeClass('d-none');
-
-    }
-    else {
+      $('.comparison').addClass('d-none');
+      $('.events').addClass('d-none');
+      $('.select-footer .news-select i, .select-footer .news-select span').css({
+        'color': '#222'
+      });
+      $('.select-footer .trend-analysis-select i, .select-footer .trend-analysis-select span').css({
+        'color': 'rgba(0, 0, 0, 0.54)'
+      });
+      $('.select-footer .schedule-select i, .select-footer .schedule-select span').css({
+        'color': 'rgba(0, 0, 0, 0.54)'
+      });
+      $('.select-footer .comparison-select i, .select-footer .comparison-select span').css({
+        'color': 'rgba(0, 0, 0, 0.54)'
+      });
+      $('.select-footer .events-select i, .select-footer .events-select span').css({
+        'color': 'rgba(0, 0, 0, 0.54)'
+      });
+      var news_nav = $('.news-show.col-6').width();
+      $('.overlay-indicator').width(news_nav + 27);
     }
   });
 
-  $('.schedule-select').on('click', function () {
-    if ($('.schedule-container').hasClass('d-none')) {
-      $('.schedule-container').removeClass('d-none');
-      $('.trend-analysis-container').addClass('d-none');
-      var day_nav = $('.mon').width();
-      $('.overlay-indicator').width(day_nav);
-    }
-  })
 });
+
+/************** footer view change script ************/
+// $(function () {
+//   $('.trend-analysis-select').on('click', function () {
+//     if ($('.trend-analysis-container').hasClass('d-none')) {
+//       $('.schedule-container').addClass('d-none');
+//       $('.trend-analysis-container').removeClass('d-none');
+//
+//     }
+//     else {
+//     }
+//   });
+//
+//   $('.schedule-select').on('click', function () {
+//     if ($('.schedule-container').hasClass('d-none')) {
+//       $('.schedule-container').removeClass('d-none');
+//       $('.trend-analysis-container').addClass('d-none');
+//       var day_nav = $('.mon').width();
+//       $('.overlay-indicator').width(day_nav);
+//     }
+//   })
+// });
 
 /************* trend analysis dropdown change script ***********/
 {
@@ -433,7 +477,7 @@ $(function () {
       $(this).find('a').css({
         'font-weight': 'bold'
       });
-      $('.overlay-indicator').animate({
+      $('.schedule-container .overlay-indicator').animate({
         left: 3
       });
       get_curr_visible_day($(this).find('a'));
@@ -456,7 +500,7 @@ $(function () {
       $('#tab-tue').animate({
         'left': 0
       });
-      $('.overlay-indicator').animate({
+      $('.schedule-container .overlay-indicator').animate({
         left: $('.mon.col-2').width() + 30
       });
       $(this).find('a').css({
@@ -482,7 +526,7 @@ $(function () {
       $('#tab-wed').animate({
         'left': 0
       });
-      $('.overlay-indicator').animate({
+      $('.schedule-container .overlay-indicator').animate({
         left: 2 * ($('.mon.col-2').width() + 30)
       });
       $(this).find('a').css({
@@ -508,7 +552,7 @@ $(function () {
       $('#tab-thu').animate({
         'left': 0
       });
-      $('.overlay-indicator').animate({
+      $('.schedule-container .overlay-indicator').animate({
         left: 3 * ($('.mon.col-2').width() + 30)
       });
       $(this).find('a').css({
@@ -534,7 +578,7 @@ $(function () {
       $('#tab-fri').animate({
         'left': 0
       });
-      $('.overlay-indicator').animate({
+      $('.schedule-container .overlay-indicator').animate({
         left: 4 * ($('.mon.col-2').width() + 30)
       });
       $(this).find('a').css({
@@ -561,7 +605,7 @@ $(function () {
       $('#tab-sat').animate({
         'left': 0
       });
-      $('.overlay-indicator').animate({
+      $('.schedule-container .overlay-indicator').animate({
         left: 5 * ($('.mon.col-2').width() + 30)
       });
       $(this).find('a').css({
@@ -577,6 +621,8 @@ $(function () {
   })
 });
 
+/*********************** Switch Upcoming/Past Script ********************/
+
 $(function () {
   function get_curr_visible_event(curr) {
     var window_width = $(window).width();
@@ -588,7 +634,7 @@ $(function () {
       }
     });
 
-    $('.week-days li a').each(function () {
+    $('.event-nav li a').each(function () {
       if ($(this).text() !== curr.text() && $(this).css('font-weight') === "bold") {
         console.log(curr.text());
         $(this).css({
@@ -597,7 +643,6 @@ $(function () {
       }
     })
   }
-
 
   $('.upcoming').on('click', function () {
     var window_width = $(window).width();
@@ -613,7 +658,7 @@ $(function () {
       $(this).find('a').css({
         'font-weight': 'bold'
       });
-      $('.overlay-indicator').animate({
+      $('.events .overlay-indicator').animate({
         left: 3
       });
       get_curr_visible_event($(this).find('a'));
@@ -637,7 +682,7 @@ $(function () {
       $('#tab-past').animate({
         'left': 0
       });
-      $('.overlay-indicator').animate({
+      $('.events .overlay-indicator').animate({
         left: $('.upcoming.col-6').width() + 30
       });
       $(this).find('a').css({
@@ -651,6 +696,80 @@ $(function () {
       }, 400);
     }
   });
+
+  /*********************** Switch News/Tweets Script ********************/
+
+
+  function get_curr_visible_panel(curr) {
+    var window_width = $(window).width();
+    $('.tab-content').find('.news-tweets-tab').each(function () {
+      if ($(this).offset().left === 0) {
+        $(this).animate({
+          'left': window_width
+        });
+      }
+    });
+
+    $('.news-tweets-nav li a').each(function () {
+      if ($(this).text() !== curr.text() && $(this).css('font-weight') === "bold") {
+        console.log(curr.text());
+        $(this).css({
+          'font-weight': 'unset'
+        });
+      }
+    })
+  }
+
+  $('.news-show').on('click', function () {
+    var window_width = $(window).width();
+    var self = $(this);
+    if ($('#tab-news').offset().left === window_width) {
+      $(this).siblings().each(function () {
+        $(this).css('pointer-events', 'none');
+      });
+      $('#tab-news').animate({
+        'left': 0
+      });
+      $(this).find('a').css({
+        'font-weight': 'bold'
+      });
+      $('.news-social .overlay-indicator').animate({
+        left: 3
+      });
+      get_curr_visible_panel($(this).find('a'));
+      setTimeout(function () {
+        self.siblings().each(function () {
+          $(this).css('pointer-events', 'unset');
+        });
+      }, 400);
+    }
+  });
+
+  $('.tweets-show').on('click', function () {
+    var window_width = $(window).width();
+    var self = $(this);
+    if ($('#tab-tweets').offset().left === window_width) {
+      $(this).siblings().each(function () {
+        $(this).css('pointer-events', 'none');
+      });
+      $('#tab-tweets').animate({
+        'left': 0
+      });
+      $('.news-social .overlay-indicator').animate({
+        left: $('.tweets-show.col-6').width() + 30
+      });
+      $(this).find('a').css({
+        'font-weight': 'bold'
+      });
+      get_curr_visible_panel($(this).find('a'));
+      setTimeout(function () {
+        self.siblings().each(function () {
+          $(this).css('pointer-events', 'unset');
+        });
+      }, 400);
+    }
+  });
+
 });
 
 /******** login form radio button script ******/
@@ -662,6 +781,7 @@ $(function () {
     self.prop('checked', true);
   });
 }
+
 
 
 
