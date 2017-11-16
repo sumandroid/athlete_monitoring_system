@@ -236,4 +236,9 @@
     margin-bottom: 0;
   }
 
+  .padding-custom{
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
 }
